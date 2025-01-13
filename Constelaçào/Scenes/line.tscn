@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cognj5bmife05"]
+
+[ext_resource type="Script" path="res://Scenes/line.gd" id="1_6t5af"]
+[ext_resource type="Texture2D" uid="uid://dpk7ajbi1a7tc" path="res://Artwork/line.png" id="1_i2524"]
+
+[node name="Line" type="Line2D"]
+points = PackedVector2Array(0, 0, 0, 0)
+width = 32.0
+default_color = Color(1, 1, 1, 0.596078)
+texture = ExtResource("1_i2524")
+texture_mode = 1
+joint_mode = 2
+script = ExtResource("1_6t5af")

@@ -1,0 +1,14 @@
+# Camera
+
+-Zoom In: +
+-Zoom Out: -
+-Mover: Setas
+
+# Ferramentas
+
+-1: Adicionar Estrela
+-2: Adicionar Linha
+-3: Mover 
+-4: Eliminar
+
+Clique direito > Voltar ao Modo normal ( sem ferramenta selecionada )
