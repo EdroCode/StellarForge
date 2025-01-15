@@ -4,6 +4,7 @@ extends Container
 var line_win_open : bool = false
 var star_win_open : bool = false
 
+
 var ad1 = preload("res://Artwork/1.png")
 var ad2 = preload("res://Artwork/addgold.png")
 var li1 = preload("res://Artwork/2.png")
@@ -62,6 +63,7 @@ func _on_add_button_down():
 
 
 func _on_line_button_down():
+	
 	if line_win_open:
 		line_win("close")	
 	else:
@@ -74,17 +76,17 @@ func _on_small_button_down():
 	add_win("close")
 	controller.star_size = "small"
 	$"../Warning".text = "Tamanho Selecionado: Pequeno"
+	controller.initialize_add_star()
 
 	
 	#tamanho pequeno
-
 
 
 func _on_big_button_down():
 	add_win("close")
 	controller.star_size = "big"
 	$"../Warning".text = "Tamanho Selecionado: Grande"
-	#controller.initialize_add_star()
+	controller.initialize_add_star()
 	#tamanho grande
 
 func _on_fill_button_down():
@@ -92,6 +94,7 @@ func _on_fill_button_down():
 	$"../Warning".text = "Linha Selecionada: Lisa"
 	controller.initialize_add_line()
 	line_win("close")
+	controller.initialize_add_line()
 
 
 func _on_traced_button_down():
@@ -99,6 +102,7 @@ func _on_traced_button_down():
 	$"../Warning".text = "Linha Selecionada: Tracejada"
 	controller.initialize_add_line()
 	line_win("close")
+	controller.initialize_add_line()
 
 
 func add_win(toggle):
@@ -165,3 +169,11 @@ func _on_skill_open_button_down():
 func _on_color_pallete_button_down():
 	$ColorPallete/TextureRect.visible = !$ColorPallete/TextureRect.visible
 
+
+
+func _on_plus_button_down():
+	$"../../../Camera2D".zoom_in()
+
+
+func _on_minus_button_down():
+	$"../../../Camera2D".zoom_out()

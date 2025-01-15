@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dfy27ficuxty0"
-path="res://.godot/imported/EightBitDragon-anqx.ttf-09b16a31fb9d655791daf908aa5491f8.fontdata"
+uid="uid://0rtn3xa50dfs"
+path="res://.godot/imported/Mystery Font(1).ttf-b8b8e88541743ea98267ab0829c6e32e.fontdata"
 
 [deps]
 
-source_file="res://Artwork/Fonts/EightBitDragon-anqx.ttf"
-dest_files=["res://.godot/imported/EightBitDragon-anqx.ttf-09b16a31fb9d655791daf908aa5491f8.fontdata"]
+source_file="res://Artwork/Fonts/Mystery Font(1).ttf"
+dest_files=["res://.godot/imported/Mystery Font(1).ttf-b8b8e88541743ea98267ab0829c6e32e.fontdata"]
 
 [params]
 
@@ -21,7 +21,7 @@ msdf_size=48
 allow_system_fallback=true
 force_autohinter=false
 hinting=1
-subpixel_positioning=0
+subpixel_positioning=1
 oversampling=0.0
 Fallbacks=null
 fallbacks=[]

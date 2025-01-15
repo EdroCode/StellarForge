@@ -74,9 +74,11 @@ func initialize_add_star():
 
 func state_add_star(delta):
 	
-	if Input.is_action_just_pressed("select"):
-		var pos = get_local_mouse_position()
-		create_star(pos, star_size)
+	if can_add_star():
+		if Input.is_action_just_pressed("select"):
+			var pos = get_local_mouse_position()
+			create_star(pos, star_size)
+
 	
 	inventory_manager()
 
@@ -126,18 +128,24 @@ func inventory_manager():
 	
 	if Input.is_action_just_pressed("CreateStar"):
 		if state_cur != STATES.ADD_STAR:
+			deselect()
 			initialize_add_star()
 	if Input.is_action_just_pressed("CreateLine"):
 		if state_cur != STATES.ADD_LINE:
+			deselect()
 			initialize_add_line()
 	if Input.is_action_just_pressed("MoveTool"):
 		if state_cur != STATES.MOVE_STARS:
+			deselect()
 			initialize_move_stars()
 	if Input.is_action_just_pressed("SelectTool"):
 		if state_cur != STATES.SELECT:
 			initialize_select_stars()
+			deselect()
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
 		initialize_none()
+		deselect()
+		
 
 
 func create_line(selected_star):
@@ -186,8 +194,14 @@ func spawn_line():
 	warn_label.text = ""
 
 
-func _on_color_rect_mouse_entered():
-	$".".initialize_none()
+func can_add_star():
+	
+	var p = get_global_mouse_position()
+	
+	if p.y > 48 and p.y < 540 and p.x > 0 and p.x < 960:
+		return true
+	
+
 
 
 #
@@ -203,3 +217,18 @@ func _on_move_button_down():
 
 func _on_select_button_down():
 	initialize_select_stars()
+
+
+func _on_texture_rect_mouse_entered():
+	#$".".initialize_none()
+	pass
+
+
+
+
+
+
+
+
+
+
