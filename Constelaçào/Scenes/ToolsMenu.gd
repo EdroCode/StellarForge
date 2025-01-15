@@ -13,10 +13,13 @@ var mv2 = preload("res://Artwork/movegold.png")
 var se1 = preload("res://Artwork/4.png")
 var se2 = preload("res://Artwork/arrowgold.png")
 
+var color = ""
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	line_win("close")
 	add_win("close")
+	$ColorPallete/TextureRect.visible = false 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -152,3 +155,13 @@ Clique direito > Voltar ao Modo normal ( sem ferramenta selecionada )")
 
 func _on_skill_open_button_down():
 	$"../../SkillEdit".visible = !$"../../SkillEdit".visible 
+	if controller.selected_star != null:
+		$"../../SkillEdit/Title".text = ""
+		$"../../SkillEdit/Desc".text = ""
+
+
+
+
+func _on_color_pallete_button_down():
+	$ColorPallete/TextureRect.visible = !$ColorPallete/TextureRect.visible
+

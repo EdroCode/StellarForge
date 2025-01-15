@@ -54,10 +54,12 @@ func _process(delta):
 			state_select_stars(delta)
 
 func initialize_none():
+	$"GUI/Control Menu/ToolsMenu/ColorPallete/TextureRect".visible = false
 	dragging = false
 	warn_label.text = ("Ferramenta Selecionada: None")
 	state_nxt = STATES.NONE
 	$GUI/SkillEdit.visible = false
+	deselect()
 
 func state_none(delta):
 	
@@ -192,3 +194,12 @@ func _on_color_rect_mouse_entered():
 # Barra de reputaçao
 #
 
+
+
+
+func _on_move_button_down():
+	initialize_move_stars()
+
+
+func _on_select_button_down():
+	initialize_select_stars()

@@ -1,7 +1,7 @@
 extends Control
 
-@onready var title_label = $Title/LineEdit
-@onready var description_label = $Label
+@onready var title_label = $Title
+@onready var description_label = $Desc
 
 var title
 var description 
@@ -22,12 +22,12 @@ func _process(delta):
 
 
 func _on_save_button_button_down():
-	
-	var s = parent.selected_star
-	
-	s.skill_name = title_label.text
-	s.skill_description = description_label.text
-	
+
+	if parent.selected_star != null:
+		var s = parent.selected_star
+		s.skill_name = title_label.text
+		s.skill_description = description_label.text
+		
 	
 	
 	
