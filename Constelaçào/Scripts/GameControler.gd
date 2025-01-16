@@ -85,7 +85,25 @@ func _unhandled_input(event):
 		if can_add_star():
 			var pos = get_local_mouse_position()
 			create_star(pos, star_size)
-		
+	if Input.is_action_just_pressed("CreateStar"):
+		if state_cur != STATES.ADD_STAR:
+			deselect()
+			initialize_add_star()
+	if Input.is_action_just_pressed("CreateLine"):
+		if state_cur != STATES.ADD_LINE:
+			deselect()
+			initialize_add_line()
+	if Input.is_action_just_pressed("MoveTool"):
+		if state_cur != STATES.MOVE_STARS:
+			deselect()
+			initialize_move_stars()
+	if Input.is_action_just_pressed("SelectTool"):
+		if state_cur != STATES.SELECT:
+			initialize_select_stars()
+			deselect()
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
+		initialize_none()
+		deselect()
 
 func initialize_add_line():
 	dragging = false
@@ -130,26 +148,26 @@ func state_select_stars(delta):
 		selected_star = null
 
 func inventory_manager():
-	
-	if Input.is_action_just_pressed("CreateStar"):
-		if state_cur != STATES.ADD_STAR:
-			deselect()
-			initialize_add_star()
-	if Input.is_action_just_pressed("CreateLine"):
-		if state_cur != STATES.ADD_LINE:
-			deselect()
-			initialize_add_line()
-	if Input.is_action_just_pressed("MoveTool"):
-		if state_cur != STATES.MOVE_STARS:
-			deselect()
-			initialize_move_stars()
-	if Input.is_action_just_pressed("SelectTool"):
-		if state_cur != STATES.SELECT:
-			initialize_select_stars()
-			deselect()
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
-		initialize_none()
-		deselect()
+	pass
+	#if Input.is_action_just_pressed("CreateStar"):
+		#if state_cur != STATES.ADD_STAR:
+			#deselect()
+			#initialize_add_star()
+	#if Input.is_action_just_pressed("CreateLine"):
+		#if state_cur != STATES.ADD_LINE:
+			#deselect()
+			#initialize_add_line()
+	#if Input.is_action_just_pressed("MoveTool"):
+		#if state_cur != STATES.MOVE_STARS:
+			#deselect()
+			#initialize_move_stars()
+	#if Input.is_action_just_pressed("SelectTool"):
+		#if state_cur != STATES.SELECT:
+			#initialize_select_stars()
+			#deselect()
+	#if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
+		#initialize_none()
+		#deselect()
 		
 
 
