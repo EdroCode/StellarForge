@@ -102,7 +102,9 @@ func _on_ffe_478_button_down():
 
 
 func _on_check_button_button_down(): 
-	hex = hexLine.text
+	
+	
+	hex = "#"+ hexLine.text
 	$TextureRect/ColorButtons/ColorRect.color = hexLine.text
 	$"../../../..".warn_label.text = "Cor selecionada:" + hex
 	

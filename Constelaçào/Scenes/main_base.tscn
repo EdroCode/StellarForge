@@ -108,7 +108,7 @@ scale = Vector2(1.2, 1.2)
 mouse_filter = 2
 script = ExtResource("4_uldr8")
 
-[node name="TextureRect" type="TextureRect" parent="GUI/SkillEdit"]
+[node name="TextureRect" type="TextureRect" parent="GUI/SkillEdit" groups=["is_hovered()"]]
 layout_mode = 0
 offset_left = 27.0
 offset_top = 91.0
@@ -490,15 +490,15 @@ offset_bottom = 39.0
 [node name="HexChoose" type="LineEdit" parent="GUI/Control Menu/ToolsMenu/ColorPallete/TextureRect"]
 layout_mode = 0
 offset_left = 19.0
-offset_top = 39.6
-offset_right = 335.0
-offset_bottom = 105.6
+offset_top = 40.0
+offset_right = 176.0
+offset_bottom = 106.0
 scale = Vector2(0.170706, 0.170706)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("23_anpot")
 theme_override_font_sizes/font_size = 32
 placeholder_text = "#ffffff"
-max_length = 6
+max_length = 7
 flat = true
 
 [node name="1-Add" type="TextureButton" parent="GUI/Control Menu/ToolsMenu"]

@@ -30,7 +30,7 @@ func _ready():
 	initialize_none()
 
 func _process(delta):
-	
+	#print(can_add_star())
 	if state_nxt != state_cur:
 		
 		state_prv = state_cur
@@ -74,13 +74,18 @@ func initialize_add_star():
 
 func state_add_star(delta):
 	
-	if can_add_star():
-		if Input.is_action_just_pressed("select"):
-			var pos = get_local_mouse_position()
-			create_star(pos, star_size)
+	
+
 
 	
 	inventory_manager()
+
+func _unhandled_input(event):
+	if event.is_action_pressed("select"):
+		if can_add_star():
+			var pos = get_local_mouse_position()
+			create_star(pos, star_size)
+		
 
 func initialize_add_line():
 	dragging = false
@@ -198,7 +203,11 @@ func can_add_star():
 	
 	var p = get_global_mouse_position()
 	
-	if p.y > 48 and p.y < 540 and p.x > 0 and p.x < 960:
+	var nodes = get_tree().get_nodes_in_group("Interactable")
+	
+	if p.y > 48 and p.y < 540 and p.x > 0 and p.x < 960 and state_cur == 0:
+		
+		
 		return true
 	
 

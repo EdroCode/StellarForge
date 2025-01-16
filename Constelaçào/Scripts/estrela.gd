@@ -62,6 +62,8 @@ func initialize_idle():
 
 func state_idle(delta):
 	
+	$AnimationPlayer.play("idle")
+	
 	if mouse_on_area:
 		$Sprite.visible = true
 		if Input.is_action_just_pressed("select"):
@@ -98,6 +100,8 @@ func initialize_selected():
 
 func state_selected(delta):
 	
+	$AnimationPlayer.play("selected")
+	
 	$Sprite.visible = true
 	if Input.is_action_just_pressed("Delete"):
 		queue_free()
@@ -117,6 +121,7 @@ func initialize_drag():
 	$Sprite.visible = true
 
 func state_drag(delta):
+	$AnimationPlayer.play("drag")
 	
 	global_position = get_global_mouse_position()
 	
