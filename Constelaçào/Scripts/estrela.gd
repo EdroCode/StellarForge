@@ -1,5 +1,6 @@
 extends Node2D
 
+
 var mouse_on_area : bool
 var selectable : bool = false
 
@@ -21,11 +22,14 @@ var skill_name = ""
 var skill_description = ""
 
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	state_cur = -1
 	state_prv = -1
 	state_nxt = STATES.IDLE
+	
+
 
 
 
@@ -91,11 +95,11 @@ func initialize_selected():
 	if parent.state_cur == 3:
 		if parent.selected_star == null:
 			parent.selected_star = self
-			get_tree().get_first_node_in_group("SkillEdit").visible = true
+			get_tree().get_first_node_in_group("SkillEdit").open()
 		else:
 			parent.selected_star.initialize_idle()
 			parent.selected_star = self
-			get_tree().get_first_node_in_group("SkillEdit").visible = true
+			get_tree().get_first_node_in_group("SkillEdit").open()
 	state_nxt = STATES.SELECTED
 
 func state_selected(delta):
@@ -149,6 +153,34 @@ func update_skill():
 	
 	skill_node.title_label.text = skill_name
 	skill_node.description_label.text = skill_description
+
+func save():
+	var star_data = {
+		"filename" : get_scene_file_path(),
+		"parent" : get_parent().get_path(),
+		"pos_x" : global_position.x,
+		"pos_y" : global_position.y,
+		"title" : skill_name,
+		"description" : skill_description,
+		"size" : s_size,
+		"info_code" : info_code
+	}
+	
+	
+	
+	return star_data
+
+
+@onready var info_code = get_random_string(randi_range(5,100))
+
+func get_random_string(length: int) -> String:
+	var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+	var random_string = ""
+	
+	for i in length:
+		random_string += alphabet[randi() % alphabet.size()]
+	
+	return random_string
 
 
 

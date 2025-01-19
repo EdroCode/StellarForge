@@ -181,7 +181,7 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 0.921569, 1)
 theme_override_fonts/font = ExtResource("23_anpot")
 theme_override_font_sizes/font_size = 32
-text = "Stellar Forge"
+text = "Constelacoes"
 horizontal_alignment = 1
 vertical_alignment = 1
 text_direction = 1
@@ -586,7 +586,7 @@ access = 2
 root_subfolder = "saves"
 
 [node name="LoadDialog" type="FileDialog" parent="GUI"]
-title = "Open a File"
+title = "Open a Save File"
 initial_position = 1
 size = Vector2i(622, 330)
 visible = true

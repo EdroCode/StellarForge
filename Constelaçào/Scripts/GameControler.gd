@@ -20,6 +20,14 @@ var state_prv : int
 var star_size #big #small
 var line_mode #flat #traced
 
+func _notification(what):
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		get_tree().quit() # default behavior
+		
+		var file = FileAccess.open("res://Saves/session_save.cfg", FileAccess.WRITE)
+		file.store_buffer(PackedByteArray())  # This will clear the file by writing an empty string.
+		file.close()
+		
 
 func _ready():
 	state_cur = -1
@@ -35,7 +43,6 @@ func _process(delta):
 		
 		state_prv = state_cur
 		state_cur = state_nxt
-	
 	#print(selected_star)
 	
 	$"GUI/Control Menu/Test".text = str(selected_stars)
@@ -220,8 +227,6 @@ func spawn_line():
 func can_add_star():
 	
 	var p = get_global_mouse_position()
-	
-	var nodes = get_tree().get_nodes_in_group("Interactable")
 	
 	if p.y > 48 and p.y < 540 and p.x > 0 and p.x < 960 and state_cur == 0:
 		

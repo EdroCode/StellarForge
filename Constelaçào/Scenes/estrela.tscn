@@ -198,7 +198,7 @@ _data = {
 "selected": SubResource("Animation_577e3")
 }
 
-[node name="Estrela" type="Node2D"]
+[node name="Estrela" type="Node2D" groups=["Persist", "Star"]]
 scale = Vector2(3, 3)
 script = ExtResource("1_unjk1")
 

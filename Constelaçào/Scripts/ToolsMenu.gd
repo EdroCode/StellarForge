@@ -158,10 +158,7 @@ Clique direito > Voltar ao Modo normal ( sem ferramenta selecionada )")
 
 
 func _on_skill_open_button_down():
-	$"../../SkillEdit".visible = !$"../../SkillEdit".visible 
-	if controller.selected_star != null:
-		$"../../SkillEdit/Title".text = ""
-		$"../../SkillEdit/Desc".text = ""
+	$"../../SkillEdit".open()
 
 
 
