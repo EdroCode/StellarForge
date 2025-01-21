@@ -44,7 +44,9 @@ func _process(delta):
 		$AnimationPlayer.play(anim_cur)
 	
 	if s_size == "big":
-		scale = Vector2(4.5, 4.5)
+		scale = Vector2(8, 8)
+	if s_size == "medium":
+		scale = Vector2(5, 5)
 	elif s_size == "small":
 		scale = Vector2(3, 3)
 	

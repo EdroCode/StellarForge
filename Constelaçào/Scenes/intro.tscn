@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://d4hcl4lb5qmv3"]
+
+[ext_resource type="Shader" path="res://Artwork/wobbly.gdshader" id="1_6me3k"]
+[ext_resource type="Texture2D" uid="uid://33h4cjfweiwn" path="res://Artwork/back.png" id="1_kj7mg"]
+[ext_resource type="Script" path="res://Scenes/intro.gd" id="1_yg1tq"]
+[ext_resource type="Texture2D" uid="uid://bolcldvqr5nqv" path="res://Artwork/T1.png" id="2_hh5po"]
+[ext_resource type="Texture2D" uid="uid://cbw1wkqmrafod" path="res://Artwork/52.png" id="3_2njip"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vfbeu"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ct4cx"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6vmvd"]
+noise = SubResource("FastNoiseLite_ct4cx")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r0bgb"]
+shader = ExtResource("1_6me3k")
+shader_parameter/strength = 1.0
+shader_parameter/uv_scaling = 1.0
+shader_parameter/movement_direction = Vector2(20.155, 18.175)
+shader_parameter/movement_speed = 0.02
+shader_parameter/NOISE_TEXTURE = SubResource("NoiseTexture2D_6vmvd")
+
+[node name="Intro" type="Node2D"]
+script = ExtResource("1_yg1tq")
+
+[node name="Node2D" type="Node2D" parent="."]
+material = SubResource("ShaderMaterial_vfbeu")
+
+[node name="Back" type="Sprite2D" parent="Node2D"]
+position = Vector2(480, 270)
+scale = Vector2(5, 5)
+texture = ExtResource("1_kj7mg")
+
+[node name="T1" type="Sprite2D" parent="Node2D"]
+position = Vector2(480, 270)
+scale = Vector2(5, 5)
+texture = ExtResource("2_hh5po")
+
+[node name="52" type="Sprite2D" parent="Node2D"]
+position = Vector2(473, 239)
+scale = Vector2(5, 5)
+texture = ExtResource("3_2njip")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_r0bgb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

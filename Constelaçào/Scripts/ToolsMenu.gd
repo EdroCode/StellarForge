@@ -82,6 +82,12 @@ func _on_small_button_down():
 	#tamanho pequeno
 
 
+func _on_medium_button_down():
+	add_win("close")
+	controller.star_size = "medium"
+	$"../Warning".text = "Tamanho Selecionado: Medio"
+	controller.initialize_add_star()
+
 func _on_big_button_down():
 	add_win("close")
 	controller.star_size = "big"
@@ -111,10 +117,13 @@ func add_win(toggle):
 		star_win_open = true
 		$"1-Add/Big".visible = true
 		$"1-Add/Small".visible = true
+		$"1-Add/Medium".visible = true
 	elif toggle == "close":
 		star_win_open = false
 		$"1-Add/Big".visible = false
 		$"1-Add/Small".visible = false
+		$"1-Add/Medium".visible = false
+		
 
 
 func line_win(toggle):
@@ -158,7 +167,10 @@ Clique direito > Voltar ao Modo normal ( sem ferramenta selecionada )")
 
 
 func _on_skill_open_button_down():
-	$"../../SkillEdit".open()
+	if visible == false:
+		$"../../SkillEdit".open()
+	else:
+		$"../../SkillEdit".visible = false
 
 
 
@@ -174,3 +186,4 @@ func _on_plus_button_down():
 
 func _on_minus_button_down():
 	$"../../../Camera2D".zoom_out()
+

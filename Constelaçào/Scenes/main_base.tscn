@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ce88oyml5ok6q"]
+[gd_scene load_steps=32 format=3 uid="uid://ce88oyml5ok6q"]
 
 [ext_resource type="Script" path="res://Scripts/GameControler.gd" id="1_1y343"]
 [ext_resource type="Script" path="res://Scripts/CameraControl.gd" id="3_3fy6h"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://dvg6qitsu3pbe" path="res://Artwork/colorpicker.png" id="9_fbcid"]
 [ext_resource type="Script" path="res://Scripts/ColorPallete.gd" id="9_qfxu6"]
 [ext_resource type="Texture2D" uid="uid://cupxk3ruxc8c7" path="res://Artwork/check.png" id="11_pidg6"]
+[ext_resource type="Texture2D" uid="uid://fd06gxe14tq8" path="res://Artwork/smalll.png" id="20_fbjbo"]
 [ext_resource type="FontFile" uid="uid://0rtn3xa50dfs" path="res://Artwork/Fonts/Mystery Font(1).ttf" id="23_anpot"]
 [ext_resource type="Texture2D" uid="uid://7fwl0pr10ata" path="res://Artwork/plus.png" id="24_ckonv"]
 [ext_resource type="Texture2D" uid="uid://ck8oallacorcq" path="res://Artwork/minus.png" id="25_rlmj3"]
@@ -221,6 +222,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("7_c36rh")
 
 [node name="Help" type="TextureButton" parent="GUI/Control Menu"]
+visible = false
 layout_mode = 2
 offset_left = 884.0
 offset_top = 8.0
@@ -232,9 +234,9 @@ texture_normal = ExtResource("8_pm2ep")
 
 [node name="Plus" type="TextureButton" parent="GUI/Control Menu"]
 layout_mode = 2
-offset_left = 848.0
+offset_left = 884.0
 offset_top = 8.0
-offset_right = 864.0
+offset_right = 900.0
 offset_bottom = 24.0
 scale = Vector2(2, 2)
 size_flags_horizontal = 0
@@ -245,9 +247,9 @@ texture_normal = ExtResource("24_ckonv")
 
 [node name="Minus" type="TextureButton" parent="GUI/Control Menu"]
 layout_mode = 2
-offset_left = 812.0
+offset_left = 848.0
 offset_top = 8.0
-offset_right = 828.0
+offset_right = 864.0
 offset_bottom = 24.0
 scale = Vector2(2, 2)
 size_flags_horizontal = 0
@@ -475,6 +477,16 @@ size_flags_vertical = 2
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_h4ajo")
 
+[node name="Medium" type="TextureButton" parent="GUI/Control Menu/ToolsMenu/1-Add"]
+offset_left = -32.0
+offset_top = -0.181824
+offset_right = -16.0
+offset_bottom = 15.8182
+size_flags_horizontal = 0
+size_flags_vertical = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("7_mk2dr")
+
 [node name="Small" type="TextureButton" parent="GUI/Control Menu/ToolsMenu/1-Add"]
 layout_mode = 2
 offset_left = -16.3636
@@ -484,13 +496,13 @@ offset_bottom = 15.9091
 size_flags_horizontal = 0
 size_flags_vertical = 2
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("7_mk2dr")
+texture_normal = ExtResource("20_fbjbo")
 
 [node name="Big" type="TextureButton" parent="GUI/Control Menu/ToolsMenu/1-Add"]
 layout_mode = 2
-offset_left = -32.2727
+offset_left = -48.0
 offset_top = -0.0909121
-offset_right = -16.2727
+offset_right = -32.0
 offset_bottom = 15.9091
 size_flags_horizontal = 0
 size_flags_vertical = 2
@@ -578,7 +590,6 @@ script = ExtResource("26_6dnt3")
 [node name="SaveDialog" type="FileDialog" parent="GUI"]
 initial_position = 1
 size = Vector2i(512, 330)
-visible = true
 min_size = Vector2i(200, 71)
 theme = ExtResource("26_st2tv")
 ok_button_text = "Save"
@@ -589,13 +600,21 @@ root_subfolder = "saves"
 title = "Open a File"
 initial_position = 1
 size = Vector2i(622, 330)
-visible = true
 min_size = Vector2i(200, 71)
 theme = ExtResource("26_st2tv")
 ok_button_text = "Open"
 file_mode = 0
 access = 2
 root_subfolder = "Saves"
+
+[node name="Vignete" type="ColorRect" parent="GUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
 
 [connection signal="button_down" from="GUI/SkillEdit/SaveButton" to="GUI/SkillEdit" method="_on_save_button_button_down"]
 [connection signal="button_down" from="GUI/Control Menu/SkillOpen" to="GUI/Control Menu/ToolsMenu" method="_on_skill_open_button_down"]
@@ -618,6 +637,7 @@ root_subfolder = "Saves"
 [connection signal="button_down" from="GUI/Control Menu/ToolsMenu/ColorPallete/TextureRect/ColorButtons/ffe478" to="GUI/Control Menu/ToolsMenu/ColorPallete" method="_on_ffe_478_button_down"]
 [connection signal="button_down" from="GUI/Control Menu/ToolsMenu/ColorPallete/TextureRect/ColorButtons/CheckButton" to="GUI/Control Menu/ToolsMenu/ColorPallete" method="_on_check_button_button_down"]
 [connection signal="button_down" from="GUI/Control Menu/ToolsMenu/1-Add" to="GUI/Control Menu/ToolsMenu" method="_on_add_button_down"]
+[connection signal="button_down" from="GUI/Control Menu/ToolsMenu/1-Add/Medium" to="GUI/Control Menu/ToolsMenu" method="_on_medium_button_down"]
 [connection signal="button_down" from="GUI/Control Menu/ToolsMenu/1-Add/Small" to="GUI/Control Menu/ToolsMenu" method="_on_small_button_down"]
 [connection signal="button_down" from="GUI/Control Menu/ToolsMenu/1-Add/Big" to="GUI/Control Menu/ToolsMenu" method="_on_big_button_down"]
 [connection signal="button_down" from="GUI/Control Menu/ToolsMenu/2-Line" to="GUI/Control Menu/ToolsMenu" method="_on_line_button_down"]

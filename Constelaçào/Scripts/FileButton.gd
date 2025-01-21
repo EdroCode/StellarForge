@@ -41,13 +41,14 @@ func dir_selected(dir: String):
 
 func save():
 	var save_file
+	$"../../SkillEdit".visible = false
 	
 	if current_save == null:
 		save_file = FileAccess.open("res://Saves/session_save.cfg", FileAccess.WRITE)
 	else:
 		save_file = FileAccess.open(current_save, FileAccess.WRITE)
 	var save_nodes = get_tree().get_nodes_in_group("Persist")
-	warn.text = "Saving..."
+
 	for node in save_nodes:
 		warn.text = "Saving..."
 		
@@ -84,12 +85,12 @@ func save():
 # dict of relevant variables.
 func save_game(path):
 	
+	$"../../SkillEdit".visible = false
 	
 	var save_file = FileAccess.open(path, FileAccess.WRITE)
 	var save_nodes = get_tree().get_nodes_in_group("Persist")
 	current_save = save_file
 	print("Path selected: " + str(save_file))
-	warn.text = "Saving..."
 	
 	for node in save_nodes:
 		
@@ -122,6 +123,7 @@ func save_game(path):
 # is path independent.
 func load_game(file_path):
 	
+	$"../../SkillEdit".visible = false	
 	warn = ("Loading " + str(file_path))
 	
 	print("Save selected: " + str(file_path))

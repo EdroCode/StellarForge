@@ -46,7 +46,7 @@ func _process(delta):
 	#print(selected_star)
 	
 	$"GUI/Control Menu/Test".text = str(selected_stars)
-	
+	$GUI/Vignete.color.a -= 0.0008
 	match state_cur:
 		
 		STATES.NONE:
