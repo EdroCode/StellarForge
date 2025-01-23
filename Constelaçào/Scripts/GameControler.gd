@@ -46,7 +46,7 @@ func _process(delta):
 	#print(selected_star)
 	
 	$"GUI/Control Menu/Test".text = str(selected_stars)
-	$GUI/Vignete.color.a -= 0.0008
+	$GUI/Vignete.color.a -= 0.008
 	match state_cur:
 		
 		STATES.NONE:
@@ -254,13 +254,3 @@ func _on_select_button_down():
 func _on_texture_rect_mouse_entered():
 	#$".".initialize_none()
 	pass
-
-
-
-
-
-
-
-
-
-

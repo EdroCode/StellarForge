@@ -8,10 +8,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if $Timer.time_left > 2.5:
-		$CanvasLayer/ColorRect2.color.a -= 0.0008
-	else:
-		$CanvasLayer/ColorRect2.color.a += 0.0008
+	#Mudar para Animaçcao
+	
+	pass
 
 
 func _on_timer_timeout():

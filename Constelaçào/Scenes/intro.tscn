@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://d4hcl4lb5qmv3"]
+[gd_scene load_steps=13 format=3 uid="uid://d4hcl4lb5qmv3"]
 
 [ext_resource type="Shader" path="res://Artwork/wobbly.gdshader" id="1_6me3k"]
 [ext_resource type="Texture2D" uid="uid://33h4cjfweiwn" path="res://Artwork/back.png" id="1_kj7mg"]
@@ -20,6 +20,57 @@ shader_parameter/uv_scaling = 1.0
 shader_parameter/movement_direction = Vector2(20.155, 18.175)
 shader_parameter/movement_speed = 0.02
 shader_parameter/NOISE_TEXTURE = SubResource("NoiseTexture2D_6vmvd")
+
+[sub_resource type="Animation" id="Animation_x1j68"]
+resource_name = "Idle"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.56667, 3.56667, 4.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4.96667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_on_timer_timeout"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_dxmj8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uaytc"]
+_data = {
+"Idle": SubResource("Animation_x1j68"),
+"RESET": SubResource("Animation_dxmj8")
+}
 
 [node name="Intro" type="Node2D"]
 script = ExtResource("1_yg1tq")
@@ -60,8 +111,8 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_uaytc")
+}
+autoplay = "Idle"
