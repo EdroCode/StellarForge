@@ -1,17 +1,17 @@
 extends TextureButton
 
-var current_color = ""
+
 @onready var background = $"../../../../ColorRect"
 @onready var hexLine = $TextureRect/HexChoose
 
 var colors = ["#43434f","#606070","#7e7e8f","#c2c2d1","#8c3f5d","#ba6156","#eb564b","#f2a65e","#3ca370","#5dde87"
 ,"#6476e8","#86a7ed","#ffe478"]
+var hex : String
 
-var hex = "#43434f"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	hex = colors[0]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,6 +20,13 @@ func _process(delta):
 	if hex != null:
 		$TextureRect/ColorButtons/ColorRect.color = hex
 	
+	if !$TextureRect.visible:
+		set_toggle_mode(false)
+	else:
+		set_toggle_mode(true)
+		
+
+
 
 
 

@@ -1,33 +1,42 @@
-[gd_scene load_steps=32 format=3 uid="uid://ce88oyml5ok6q"]
+[gd_scene load_steps=44 format=3 uid="uid://ce88oyml5ok6q"]
 
 [ext_resource type="Script" path="res://Scripts/GameControler.gd" id="1_1y343"]
 [ext_resource type="Script" path="res://Scripts/CameraControl.gd" id="3_3fy6h"]
-[ext_resource type="Texture2D" uid="uid://cjci4sp0asq2t" path="res://Artwork/1.png" id="3_h4ajo"]
-[ext_resource type="Texture2D" uid="uid://tgckc1g66u7r" path="res://Artwork/2.png" id="4_5svvl"]
-[ext_resource type="Texture2D" uid="uid://bweofvqed0tjm" path="res://Artwork/border.png" id="4_tivhf"]
+[ext_resource type="Texture2D" uid="uid://cjci4sp0asq2t" path="res://Artwork/UI/Tools/1.png" id="3_h4ajo"]
+[ext_resource type="Texture2D" uid="uid://tgckc1g66u7r" path="res://Artwork/UI/Tools/2.png" id="4_5svvl"]
+[ext_resource type="Texture2D" uid="uid://bweofvqed0tjm" path="res://Artwork/UI/Geral/border.png" id="4_tivhf"]
 [ext_resource type="Script" path="res://Scripts/SkillEdit.gd" id="4_uldr8"]
-[ext_resource type="Texture2D" uid="uid://tg2gkyexr4kf" path="res://Artwork/skill.png" id="5_2oqy2"]
-[ext_resource type="Texture2D" uid="uid://c0l5ewsfht1rg" path="res://Artwork/3.png" id="5_dyyxj"]
+[ext_resource type="Texture2D" uid="uid://tg2gkyexr4kf" path="res://Artwork/UI/Geral/skill.png" id="5_2oqy2"]
+[ext_resource type="Texture2D" uid="uid://c0l5ewsfht1rg" path="res://Artwork/UI/Tools/3.png" id="5_dyyxj"]
 [ext_resource type="Script" path="res://Scripts/ToolsMenu.gd" id="5_y4l80"]
-[ext_resource type="Texture2D" uid="uid://c0tattxcwlqh0" path="res://Artwork/4.png" id="6_2k12u"]
-[ext_resource type="Texture2D" uid="uid://dsvbn6bxvnn1a" path="res://Artwork/save.png" id="6_pjndk"]
+[ext_resource type="Texture2D" uid="uid://c0tattxcwlqh0" path="res://Artwork/UI/Tools/4.png" id="6_2k12u"]
+[ext_resource type="Texture2D" uid="uid://dsvbn6bxvnn1a" path="res://Artwork/UI/Tools/save.png" id="6_pjndk"]
 [ext_resource type="Texture2D" uid="uid://b8hipnkomvirw" path="res://Artwork/Fonts/exclamation.png" id="7_c36rh"]
-[ext_resource type="Texture2D" uid="uid://dlajobyavos2o" path="res://Artwork/bucket.png" id="7_gn7w0"]
-[ext_resource type="Texture2D" uid="uid://blqse4ahn208y" path="res://Artwork/ads12.png" id="7_mk2dr"]
-[ext_resource type="Texture2D" uid="uid://sbh7123k1ua0" path="res://Artwork/asdadsd12.png" id="8_l8ccs"]
+[ext_resource type="Texture2D" uid="uid://dlajobyavos2o" path="res://Artwork/UI/Tools/bucket.png" id="7_gn7w0"]
+[ext_resource type="Texture2D" uid="uid://blqse4ahn208y" path="res://Artwork/UI/Tools/ads12.png" id="7_mk2dr"]
+[ext_resource type="Texture2D" uid="uid://sbh7123k1ua0" path="res://Artwork/UI/Tools/asdadsd12.png" id="8_l8ccs"]
 [ext_resource type="Texture2D" uid="uid://dc5xte6mg7cqf" path="res://Artwork/Fonts/question.png" id="8_pm2ep"]
-[ext_resource type="Texture2D" uid="uid://cu22q1bpup1gq" path="res://Artwork/bar-sheet.png" id="8_tswst"]
-[ext_resource type="Texture2D" uid="uid://c0f0h5k7g5ulp" path="res://Artwork/asdasd.png" id="8_uwl5n"]
-[ext_resource type="Texture2D" uid="uid://kc2s5tyo1bv8" path="res://Artwork/asdasddas.png" id="9_1nrud"]
-[ext_resource type="Texture2D" uid="uid://dvg6qitsu3pbe" path="res://Artwork/colorpicker.png" id="9_fbcid"]
+[ext_resource type="Texture2D" uid="uid://cu22q1bpup1gq" path="res://Artwork/UI/Geral/bar-sheet.png" id="8_tswst"]
+[ext_resource type="Texture2D" uid="uid://c0f0h5k7g5ulp" path="res://Artwork/UI/Tools/asdasd.png" id="8_uwl5n"]
+[ext_resource type="Texture2D" uid="uid://kc2s5tyo1bv8" path="res://Artwork/UI/Tools/asdasddas.png" id="9_1nrud"]
+[ext_resource type="Texture2D" uid="uid://dvg6qitsu3pbe" path="res://Artwork/UI/Geral/colorpicker.png" id="9_fbcid"]
 [ext_resource type="Script" path="res://Scripts/ColorPallete.gd" id="9_qfxu6"]
-[ext_resource type="Texture2D" uid="uid://cupxk3ruxc8c7" path="res://Artwork/check.png" id="11_pidg6"]
-[ext_resource type="Texture2D" uid="uid://fd06gxe14tq8" path="res://Artwork/smalll.png" id="20_fbjbo"]
+[ext_resource type="Texture2D" uid="uid://cupxk3ruxc8c7" path="res://Artwork/UI/Tools/check.png" id="11_pidg6"]
+[ext_resource type="Texture2D" uid="uid://s77vd4njftsn" path="res://Artwork/UI/Tools/addgold.png" id="15_5xgoq"]
+[ext_resource type="Texture2D" uid="uid://dre82jnfnweei" path="res://Artwork/UI/Tools/music_off.png" id="15_l1abg"]
+[ext_resource type="Texture2D" uid="uid://dxw2y8vgg4k1o" path="res://Artwork/UI/Tools/linegold.png" id="17_skq0f"]
+[ext_resource type="Texture2D" uid="uid://c1hk0dyvyvpqe" path="res://Artwork/UI/Tools/movegold.png" id="19_vis5n"]
+[ext_resource type="Texture2D" uid="uid://fd06gxe14tq8" path="res://Artwork/UI/Tools/smalll.png" id="20_fbjbo"]
+[ext_resource type="Texture2D" uid="uid://dj0yonqowwuj2" path="res://Artwork/UI/Tools/arrowgold.png" id="21_001ou"]
 [ext_resource type="FontFile" uid="uid://0rtn3xa50dfs" path="res://Artwork/Fonts/Mystery Font(1).ttf" id="23_anpot"]
-[ext_resource type="Texture2D" uid="uid://7fwl0pr10ata" path="res://Artwork/plus.png" id="24_ckonv"]
-[ext_resource type="Texture2D" uid="uid://ck8oallacorcq" path="res://Artwork/minus.png" id="25_rlmj3"]
+[ext_resource type="Texture2D" uid="uid://7fwl0pr10ata" path="res://Artwork/UI/Tools/plus.png" id="24_ckonv"]
+[ext_resource type="Texture2D" uid="uid://bc5lu45nereln" path="res://Artwork/UI/Tools/bucket-GOLD.png" id="24_dmqcu"]
+[ext_resource type="Texture2D" uid="uid://ck8oallacorcq" path="res://Artwork/UI/Tools/minus.png" id="25_rlmj3"]
 [ext_resource type="Script" path="res://Scripts/FileButton.gd" id="26_6dnt3"]
 [ext_resource type="Theme" uid="uid://d4klxd0nfjfgl" path="res://Resources/main_base.tres" id="26_st2tv"]
+[ext_resource type="Texture2D" uid="uid://hxvjtgucsfj2" path="res://Artwork/UI/Tools/sound_on.png" id="36_jl6a2"]
+[ext_resource type="Texture2D" uid="uid://ds3dwgm0yl2w3" path="res://Artwork/UI/Tools/sound_off.png" id="37_vs1st"]
+[ext_resource type="Texture2D" uid="uid://dpgul02n3nq1x" path="res://Artwork/UI/Tools/music_on.png" id="38_htveu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_018ih"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -37,6 +46,42 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nolcv"]
 bg_color = Color(1, 1, 0.921569, 0.34902)
+
+[sub_resource type="Animation" id="Animation_lg38q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6toqf"]
+resource_name = "Start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lvfno"]
+_data = {
+"RESET": SubResource("Animation_lg38q"),
+"Start": SubResource("Animation_6toqf")
+}
 
 [node name="MainBase" type="Node2D"]
 script = ExtResource("1_1y343")
@@ -199,64 +244,57 @@ theme_override_fonts/normal_font = ExtResource("23_anpot")
 theme_override_font_sizes/normal_font_size = 16
 text = "Test"
 
-[node name="GameVersion" type="RichTextLabel" parent="GUI/Control Menu"]
+[node name="HBoxContainer" type="HBoxContainer" parent="GUI/Control Menu"]
 layout_mode = 0
-offset_left = 124.0
-offset_top = 24.0
-offset_right = 215.0
-offset_bottom = 47.0
-mouse_filter = 2
-theme_override_colors/default_color = Color(1, 1, 0.921569, 1)
-theme_override_fonts/normal_font = ExtResource("23_anpot")
-theme_override_font_sizes/normal_font_size = 16
-text = "Beta 1.0"
-
-[node name="SkillOpen" type="TextureButton" parent="GUI/Control Menu"]
-layout_mode = 2
-offset_left = 920.0
+offset_left = 102.0
 offset_top = 8.0
-offset_right = 937.0
-offset_bottom = 24.0
+offset_right = 526.0
+offset_bottom = 28.0
 scale = Vector2(2, 2)
-mouse_default_cursor_shape = 2
-texture_normal = ExtResource("7_c36rh")
+theme_override_constants/separation = 2
+alignment = 2
 
-[node name="Help" type="TextureButton" parent="GUI/Control Menu"]
+[node name="Help" type="TextureButton" parent="GUI/Control Menu/HBoxContainer"]
 visible = false
 layout_mode = 2
-offset_left = 884.0
-offset_top = 8.0
-offset_right = 901.0
-offset_bottom = 24.0
-scale = Vector2(2, 2)
 mouse_default_cursor_shape = 2
 texture_normal = ExtResource("8_pm2ep")
 
-[node name="Plus" type="TextureButton" parent="GUI/Control Menu"]
+[node name="Plus" type="TextureButton" parent="GUI/Control Menu/HBoxContainer"]
 layout_mode = 2
-offset_left = 884.0
-offset_top = 8.0
-offset_right = 900.0
-offset_bottom = 24.0
-scale = Vector2(2, 2)
-size_flags_horizontal = 0
 size_flags_vertical = 2
 mouse_default_cursor_shape = 2
 toggle_mode = true
 texture_normal = ExtResource("24_ckonv")
 
-[node name="Minus" type="TextureButton" parent="GUI/Control Menu"]
+[node name="Minus" type="TextureButton" parent="GUI/Control Menu/HBoxContainer"]
 layout_mode = 2
-offset_left = 848.0
-offset_top = 8.0
-offset_right = 864.0
-offset_bottom = 24.0
-scale = Vector2(2, 2)
-size_flags_horizontal = 0
 size_flags_vertical = 2
 mouse_default_cursor_shape = 2
 toggle_mode = true
 texture_normal = ExtResource("25_rlmj3")
+
+[node name="Sound" type="TextureButton" parent="GUI/Control Menu/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = ExtResource("36_jl6a2")
+texture_pressed = ExtResource("37_vs1st")
+
+[node name="Music" type="TextureButton" parent="GUI/Control Menu/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = ExtResource("38_htveu")
+texture_pressed = ExtResource("15_l1abg")
+
+[node name="SkillOpen" type="TextureButton" parent="GUI/Control Menu/HBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = ExtResource("7_c36rh")
 
 [node name="Warning" type="RichTextLabel" parent="GUI/Control Menu"]
 layout_mode = 0
@@ -272,6 +310,9 @@ theme_override_font_sizes/normal_font_size = 32
 text = "Test"
 fit_content = true
 scroll_active = false
+
+[node name="Timer" type="Timer" parent="GUI/Control Menu/Warning"]
+wait_time = 1.5
 
 [node name="ToolsMenu" type="BoxContainer" parent="GUI/Control Menu"]
 layout_mode = 1
@@ -289,11 +330,21 @@ theme_override_constants/separation = 1
 alignment = 2
 vertical = true
 script = ExtResource("5_y4l80")
+ad1 = ExtResource("3_h4ajo")
+ad2 = ExtResource("15_5xgoq")
+li1 = ExtResource("4_5svvl")
+li2 = ExtResource("17_skq0f")
+mv1 = ExtResource("5_dyyxj")
+mv2 = ExtResource("19_vis5n")
+se1 = ExtResource("6_2k12u")
+se2 = ExtResource("21_001ou")
 
 [node name="ColorPallete" type="TextureButton" parent="GUI/Control Menu/ToolsMenu"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
+toggle_mode = true
 texture_normal = ExtResource("7_gn7w0")
+texture_pressed = ExtResource("24_dmqcu")
 script = ExtResource("9_qfxu6")
 
 [node name="TextureRect" type="TextureRect" parent="GUI/Control Menu/ToolsMenu/ColorPallete"]
@@ -478,6 +529,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("3_h4ajo")
 
 [node name="Medium" type="TextureButton" parent="GUI/Control Menu/ToolsMenu/1-Add"]
+layout_mode = 0
 offset_left = -32.0
 offset_top = -0.181824
 offset_right = -16.0
@@ -560,12 +612,14 @@ texture_normal = ExtResource("6_2k12u")
 
 [node name="FileButton" type="MenuButton" parent="GUI/Control Menu"]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 8.0
-offset_right = -807.0
-offset_bottom = 48.0
-grow_horizontal = 2
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 12.0
+offset_top = -9.0
+offset_right = 88.0
+offset_bottom = 23.0
+grow_vertical = 2
 theme = ExtResource("26_st2tv")
 theme_override_colors/font_color = Color(1, 1, 0.921569, 1)
 theme_override_colors/font_pressed_color = Color(0.388235, 0.388235, 0.356863, 1)
@@ -587,7 +641,21 @@ popup/item_3/text = "Load"
 popup/item_3/id = 0
 script = ExtResource("26_6dnt3")
 
-[node name="SaveDialog" type="FileDialog" parent="GUI"]
+[node name="Vignete" type="ColorRect" parent="GUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GUI/Vignete"]
+libraries = {
+"": SubResource("AnimationLibrary_lvfno")
+}
+
+[node name="SaveDialog" type="FileDialog" parent="."]
 initial_position = 1
 size = Vector2i(512, 330)
 min_size = Vector2i(200, 71)
@@ -596,7 +664,7 @@ ok_button_text = "Save"
 access = 2
 root_subfolder = "saves"
 
-[node name="LoadDialog" type="FileDialog" parent="GUI"]
+[node name="LoadDialog" type="FileDialog" parent="."]
 title = "Open a File"
 initial_position = 1
 size = Vector2i(622, 330)
@@ -607,20 +675,14 @@ file_mode = 0
 access = 2
 root_subfolder = "Saves"
 
-[node name="Vignete" type="ColorRect" parent="GUI"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
-
 [connection signal="button_down" from="GUI/SkillEdit/SaveButton" to="GUI/SkillEdit" method="_on_save_button_button_down"]
-[connection signal="button_down" from="GUI/Control Menu/SkillOpen" to="GUI/Control Menu/ToolsMenu" method="_on_skill_open_button_down"]
-[connection signal="button_down" from="GUI/Control Menu/Help" to="GUI/Control Menu/ToolsMenu" method="_on_help_button_down"]
-[connection signal="button_down" from="GUI/Control Menu/Plus" to="GUI/Control Menu/ToolsMenu" method="_on_plus_button_down"]
-[connection signal="button_down" from="GUI/Control Menu/Minus" to="GUI/Control Menu/ToolsMenu" method="_on_minus_button_down"]
+[connection signal="button_down" from="GUI/Control Menu/HBoxContainer/Help" to="GUI/Control Menu/ToolsMenu" method="_on_help_button_down"]
+[connection signal="button_down" from="GUI/Control Menu/HBoxContainer/Plus" to="GUI/Control Menu/ToolsMenu" method="_on_plus_button_down"]
+[connection signal="button_down" from="GUI/Control Menu/HBoxContainer/Minus" to="GUI/Control Menu/ToolsMenu" method="_on_minus_button_down"]
+[connection signal="button_down" from="GUI/Control Menu/HBoxContainer/Sound" to="GUI/Control Menu/ToolsMenu" method="_on_sound_button_down"]
+[connection signal="button_down" from="GUI/Control Menu/HBoxContainer/Music" to="GUI/Control Menu/ToolsMenu" method="_on_music_button_down"]
+[connection signal="button_down" from="GUI/Control Menu/HBoxContainer/SkillOpen" to="GUI/Control Menu/ToolsMenu" method="_on_skill_open_button_down"]
+[connection signal="finished" from="GUI/Control Menu/Warning" to="." method="_on_warning_finished"]
 [connection signal="button_down" from="GUI/Control Menu/ToolsMenu/ColorPallete" to="GUI/Control Menu/ToolsMenu" method="_on_color_pallete_button_down"]
 [connection signal="button_down" from="GUI/Control Menu/ToolsMenu/ColorPallete/TextureRect/ColorButtons/43434f" to="GUI/Control Menu/ToolsMenu/ColorPallete" method="_on_f_button_down"]
 [connection signal="button_down" from="GUI/Control Menu/ToolsMenu/ColorPallete/TextureRect/ColorButtons/ffffeb" to="GUI/Control Menu/ToolsMenu/ColorPallete" method="_on_ffffeb_button_down"]
@@ -645,5 +707,5 @@ color = Color(0, 0, 0, 1)
 [connection signal="button_down" from="GUI/Control Menu/ToolsMenu/2-Line/Traced" to="GUI/Control Menu/ToolsMenu" method="_on_traced_button_down"]
 [connection signal="button_down" from="GUI/Control Menu/ToolsMenu/3-Move" to="." method="_on_move_button_down"]
 [connection signal="button_down" from="GUI/Control Menu/ToolsMenu/4-Select" to="." method="_on_select_button_down"]
-[connection signal="confirmed" from="GUI/SaveDialog" to="GUI/Control Menu/FileButton" method="_on_save_dialog_confirmed"]
-[connection signal="file_selected" from="GUI/SaveDialog" to="GUI/Control Menu/FileButton" method="_on_save_dialog_file_selected"]
+[connection signal="confirmed" from="SaveDialog" to="GUI/Control Menu/FileButton" method="_on_save_dialog_confirmed"]
+[connection signal="file_selected" from="SaveDialog" to="GUI/Control Menu/FileButton" method="_on_save_dialog_file_selected"]

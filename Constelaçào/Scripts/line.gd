@@ -1,7 +1,7 @@
 extends Line2D
 
-var traced = preload("res://Artwork/line.png")
-var flat = preload("res://Artwork/line-flat.png")
+@export var traced : AnimatedTexture
+@export var flat : CompressedTexture2D
 
 var p1
 var p2

@@ -6,6 +6,20 @@ var selectable : bool = false
 
 @onready var warn_label = get_parent().get_parent().get_node("GUI/Control Menu/Warning")
 @onready var parent = get_parent().get_parent()
+@onready var arc = $Arc
+@onready var star = $Star
+
+@onready var skill_node = get_tree().get_first_node_in_group("SkillEdit")
+@export var small_texture : CompressedTexture2D
+@export var medium_texture : CompressedTexture2D
+@export var big_texture : CompressedTexture2D
+
+@export var small_arc : CompressedTexture2D
+@export var medium_arc : CompressedTexture2D
+@export var big_arc : CompressedTexture2D
+
+@onready var info_code = get_random_string(randi_range(5,100))
+
 
 enum STATES {IDLE, SELECTED, DRAG}
 
@@ -21,34 +35,28 @@ var anim_nxt = "idle"
 var skill_name = ""
 var skill_description = ""
 
+var t = 0.0
+var scale_min = Vector2(.7, .7)
+var scale_max = Vector2(1.1, 1.1)
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	state_cur = -1
 	state_prv = -1
-	state_nxt = STATES.IDLE
-	
+	initialize_idle()
+	check_texture(s_size)
 
 
 
 
 func _process(delta):
+	#print("State: ", state_cur, " Scale: ", scale, " Size: " , s_size, " Visibility: ", star.visible, " Current texture: ", $Star.texture)
 	
 	if state_nxt != state_cur:
 		state_prv = state_cur
 		state_cur = state_nxt
 	
-	if anim_nxt != anim_cur:
-		anim_cur = anim_nxt
-		$AnimationPlayer.play(anim_cur)
-	
-	if s_size == "big":
-		scale = Vector2(8, 8)
-	if s_size == "medium":
-		scale = Vector2(5, 5)
-	elif s_size == "small":
-		scale = Vector2(3, 3)
 	
 	match state_cur:
 		
@@ -62,16 +70,16 @@ func _process(delta):
 
 
 func initialize_idle():
-	$Sprite.visible = false
+	
+	check_texture(s_size)
+	arc.visible = false
 	anim_nxt = "idle"
-	state_nxt = STATES.IDLE
+	state_nxt = STATES.IDLE 
 
 func state_idle(delta):
 	
-	$AnimationPlayer.play("idle")
-	
 	if mouse_on_area:
-		$Sprite.visible = true
+		arc.visible = true
 		if Input.is_action_just_pressed("select"):
 			if parent.state_cur == 1:
 				initialize_selected()
@@ -85,14 +93,17 @@ func state_idle(delta):
 
 
 func initialize_selected():
-	anim_nxt = "selected"
-	$Sprite.visible = true
+	
+	check_texture(s_size)
+	arc.visible = true
 	if parent.star_selected == false:
 		parent.star_selected = true
 	parent.selected_stars.append(self)
-	parent.create_line(self)
-	#print("A estrela " + name + " foi selecionada")
+	parent.create_line()
 	update_skill()
+	
+	var current_scale_factor = (scale.x - scale_min.x) / (scale_max.x - scale_min.x)
+	t = current_scale_factor
 	
 	if parent.state_cur == 3:
 		if parent.selected_star == null:
@@ -106,31 +117,26 @@ func initialize_selected():
 
 func state_selected(delta):
 	
-	$AnimationPlayer.play("selected")
+	update_scale(delta)
 	
-	$Sprite.visible = true
+	arc.visible = true
 	if Input.is_action_just_pressed("Delete"):
 		queue_free()
 	if mouse_on_area:
 		if parent.state_cur == 2:
 			initialize_drag()
-			
-			
-			pass
-	
-	
 
 
 func initialize_drag():
+	
+	scale += Vector2(1,1)
 	anim_nxt = "drag"
 	state_nxt = STATES.DRAG
-	$Sprite.visible = true
+	arc.visible = true
+
 
 func state_drag(delta):
-	$AnimationPlayer.play("drag")
-	
 	global_position = get_global_mouse_position()
-	
 	if Input.is_action_just_pressed("select"):
 		global_position = get_global_mouse_position()
 		initialize_idle()
@@ -138,18 +144,13 @@ func state_drag(delta):
 
 
 func _on_click_check_mouse_entered():
-	
 	mouse_on_area = true
-	$Sprite.visible = true
-
+	arc.visible = true
 
 func _on_click_check_mouse_exited():
 	
 	mouse_on_area = false
-	$Sprite.visible = false
-	
-
-@onready var skill_node = get_tree().get_first_node_in_group("SkillEdit")
+	arc.visible = false
 
 func update_skill():
 	
@@ -167,13 +168,7 @@ func save():
 		"size" : s_size,
 		"info_code" : info_code
 	}
-	
-	
-	
 	return star_data
-
-
-@onready var info_code = get_random_string(randi_range(5,100))
 
 func get_random_string(length: int) -> String:
 	var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
@@ -184,6 +179,37 @@ func get_random_string(length: int) -> String:
 	
 	return random_string
 
+func check_texture(size):
+	s_size = size
+	
+	match s_size:
+		
+		"big":
+			$Star.texture = big_texture
+			$Arc.texture = big_arc
+			scale = Vector2(4, 4)
+			$Arc.scale = Vector2(.9, .9)
+			
+		"medium":
+			$Star.texture = medium_texture
+			$Arc.texture = medium_arc
+			$Arc.scale = Vector2(.9, .9)
+			scale = Vector2(3, 3)
+		"small":
+			$Star.texture = small_texture
+			$Arc.texture = small_arc
+			$Arc.scale = Vector2(1, 1)
+			scale = Vector2(3, 3)
+		_:
+			$Star.texture = null 
+			$Arc.texture = null
+			$Arc.scale = Vector2(1,1)
+			
 
 
-
+func update_scale(delta):
+	var scale_speed = 1.3
+	
+	t += delta / scale_speed 
+	var scale_factor = abs(2.0 * (fposmod(t, 1.0)) - 1.0) 
+	$Arc.scale = scale_min.lerp(scale_max, scale_factor) 

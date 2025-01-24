@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://d4hcl4lb5qmv3"]
+[gd_scene load_steps=14 format=3 uid="uid://d4hcl4lb5qmv3"]
 
-[ext_resource type="Shader" path="res://Artwork/wobbly.gdshader" id="1_6me3k"]
-[ext_resource type="Texture2D" uid="uid://33h4cjfweiwn" path="res://Artwork/back.png" id="1_kj7mg"]
-[ext_resource type="Script" path="res://Scenes/intro.gd" id="1_yg1tq"]
-[ext_resource type="Texture2D" uid="uid://bolcldvqr5nqv" path="res://Artwork/T1.png" id="2_hh5po"]
-[ext_resource type="Texture2D" uid="uid://cbw1wkqmrafod" path="res://Artwork/52.png" id="3_2njip"]
+[ext_resource type="Shader" path="res://wobbly.gdshader" id="1_6me3k"]
+[ext_resource type="Texture2D" uid="uid://33h4cjfweiwn" path="res://Artwork/UI/Geral/back.png" id="1_kj7mg"]
+[ext_resource type="Script" path="res://Scripts/intro.gd" id="1_yg1tq"]
+[ext_resource type="Texture2D" uid="uid://bolcldvqr5nqv" path="res://Artwork/UI/TextELEMENTS/T1.png" id="2_hh5po"]
+[ext_resource type="Texture2D" uid="uid://cbw1wkqmrafod" path="res://Artwork/UI/TextELEMENTS/52.png" id="3_2njip"]
+[ext_resource type="FontFile" uid="uid://0rtn3xa50dfs" path="res://Artwork/Fonts/Mystery Font(1).ttf" id="5_7twrb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vfbeu"]
 
@@ -94,6 +95,20 @@ scale = Vector2(5, 5)
 texture = ExtResource("3_2njip")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameVersion" type="RichTextLabel" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0.556863)
+offset_left = 694.0
+offset_top = 410.0
+offset_right = 790.0
+offset_bottom = 433.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(1, 1, 0.921569, 1)
+theme_override_fonts/normal_font = ExtResource("5_7twrb")
+theme_override_font_sizes/normal_font_size = 16
+text = "version 1.0.1"
+fit_content = true
+autowrap_mode = 0
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_r0bgb")

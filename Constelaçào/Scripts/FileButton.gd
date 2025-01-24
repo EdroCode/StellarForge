@@ -1,7 +1,7 @@
 extends MenuButton
 
-@onready var save_dialog = $"../../SaveDialog"
-@onready var load_dialog = $"../../LoadDialog"
+@onready var save_dialog = $"../../../SaveDialog"
+@onready var load_dialog = $"../../../LoadDialog"
 
 @onready var warn = $"../Warning"
 
@@ -50,7 +50,6 @@ func save():
 	var save_nodes = get_tree().get_nodes_in_group("Persist")
 
 	for node in save_nodes:
-		warn.text = "Saving..."
 		
 		# Check the node is an instanced scene so it can be instanced again during load.
 		if node.scene_file_path.is_empty():
@@ -72,9 +71,7 @@ func save():
 		save_file.store_line(json_string)
 		
 	
-	warn.text = ("Game saved ")
-	
-	print("Game saved in " + str(save_file))
+	$"../Warning".text = "Game saved in " + str(save_file)
 
 
 
@@ -94,8 +91,6 @@ func save_game(path):
 	
 	for node in save_nodes:
 		
-		warn.text = "Saving..."
-		
 		# Check the node is an instanced scene so it can be instanced again during load.
 		if node.scene_file_path.is_empty():
 			print("persistent node '%s' is not an instanced scene, skipped" % node.name)
@@ -116,7 +111,7 @@ func save_game(path):
 		save_file.store_line(json_string)
 		
 	
-	warn.text = ("Game saved ")
+		$"../Warning".text = "Game saved"
 
 
 # Note: This can be called from anywhere inside the tree. This function
@@ -158,9 +153,10 @@ func load_game(file_path):
 		if new_object.is_in_group("Star"):
 			new_object.position = Vector2(node_data["pos_x"], node_data["pos_y"])
 			new_object.add_to_group(node_data["info_code"])
-			new_object.s_size = node_data["size"]
+			new_object.check_texture(node_data["size"])
 			new_object.skill_name = node_data["title"]
 			new_object.skill_description = node_data["description"]
+			
 			
 			
 		elif new_object.is_in_group("Line"):
@@ -181,8 +177,9 @@ func load_game(file_path):
 			if i == "filename" or i == "parent" or i == "pos_x" or i == "pos_y":
 				continue
 			new_object.set(i, node_data[i])
-		
-	print("Save has been full loaded" + str(save_file))
+	
+	$"../Warning".text = "Save has been full loaded " 
+	
 	
 
 
@@ -192,6 +189,7 @@ func clear():
 	$"../../..".selected_star = null
 	$"../../SkillEdit/Title".text = ""
 	$"../../SkillEdit/Desc".text = ""
+	$"../Warning".text = "The Canvas has been cleared " 
 	
 	for i in nodes:
 		i.queue_free()

@@ -5,14 +5,14 @@ var line_win_open : bool = false
 var star_win_open : bool = false
 
 
-var ad1 = preload("res://Artwork/1.png")
-var ad2 = preload("res://Artwork/addgold.png")
-var li1 = preload("res://Artwork/2.png")
-var li2 = preload("res://Artwork/linegold.png")
-var mv1 = preload("res://Artwork/3.png")
-var mv2 = preload("res://Artwork/movegold.png")
-var se1 = preload("res://Artwork/4.png")
-var se2 = preload("res://Artwork/arrowgold.png")
+@export var ad1 : CompressedTexture2D
+@export var ad2 = CompressedTexture2D
+@export var li1 = CompressedTexture2D
+@export var li2 = CompressedTexture2D
+@export var mv1 = CompressedTexture2D
+@export var mv2 = CompressedTexture2D
+@export var se1 = CompressedTexture2D
+@export var se2 = CompressedTexture2D
 
 var color = ""
 
@@ -167,7 +167,8 @@ Clique direito > Voltar ao Modo normal ( sem ferramenta selecionada )")
 
 
 func _on_skill_open_button_down():
-	if visible == false:
+	
+	if $"../../SkillEdit".visible == false:
 		$"../../SkillEdit".open()
 	else:
 		$"../../SkillEdit".visible = false
@@ -177,6 +178,8 @@ func _on_skill_open_button_down():
 
 func _on_color_pallete_button_down():
 	$ColorPallete/TextureRect.visible = !$ColorPallete/TextureRect.visible
+	
+
 
 
 
@@ -187,3 +190,15 @@ func _on_plus_button_down():
 func _on_minus_button_down():
 	$"../../../Camera2D".zoom_out()
 
+
+var music_bus = AudioServer.get_bus_index("Music")
+var sfx_bus = AudioServer.get_bus_index("Effects")
+
+
+func _on_music_button_down():
+	AudioServer.set_bus_mute(music_bus, not AudioServer.is_bus_mute(music_bus))
+	
+
+
+func _on_sound_button_down():
+	AudioServer.set_bus_mute(sfx_bus, not AudioServer.is_bus_mute(sfx_bus))

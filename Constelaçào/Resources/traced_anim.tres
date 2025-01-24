@@ -1,0 +1,18 @@
+[gd_resource type="AnimatedTexture" load_steps=5 format=3 uid="uid://bbu4x3tpc8flr"]
+
+[ext_resource type="Texture2D" uid="uid://btut1xa17575w" path="res://Artwork/Placeble/tile000.png" id="1_wu3yb"]
+[ext_resource type="Texture2D" uid="uid://d3pxt2byjhxce" path="res://Artwork/Placeble/tile001.png" id="2_0du81"]
+[ext_resource type="Texture2D" uid="uid://c7r2vvc1dt2e7" path="res://Artwork/Placeble/tile002.png" id="3_nr2yh"]
+[ext_resource type="Texture2D" uid="uid://dpdv83dsru6sc" path="res://Artwork/Placeble/tile003.png" id="4_h1uvj"]
+
+[resource]
+frames = 5
+speed_scale = 11.0
+frame_0/texture = ExtResource("1_wu3yb")
+frame_1/texture = ExtResource("2_0du81")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_nr2yh")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("4_h1uvj")
+frame_3/duration = 1.0
+frame_4/duration = 1.0

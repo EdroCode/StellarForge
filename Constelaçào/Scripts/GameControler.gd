@@ -17,8 +17,8 @@ var state_nxt : int
 var state_prv : int
 
 # Drawing Options
-var star_size #big #small
-var line_mode #flat #traced
+var star_size = "small"
+var line_mode 
 
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
@@ -69,29 +69,24 @@ func initialize_none():
 	deselect()
 
 func state_none(delta):
-	
-	inventory_manager()
+	pass
 
 func initialize_add_star():
 	dragging = false
 	deselect()
-	$GUI/SkillEdit.visible = false	
+	$GUI/SkillEdit.visible = false
 	state_nxt = STATES.ADD_STAR
 	warn_label.text = ("Ferramenta Selecionada: Criar Estrela")
 
 func state_add_star(delta):
 	
-	
-
-
-	
-	inventory_manager()
+	pass
 
 func _unhandled_input(event):
 	if event.is_action_pressed("select"):
 		if can_add_star():
 			var pos = get_local_mouse_position()
-			create_star(pos, star_size)
+			create_star(pos)
 	if Input.is_action_just_pressed("CreateStar"):
 		if state_cur != STATES.ADD_STAR:
 			deselect()
@@ -126,10 +121,7 @@ func state_add_line(delta):
 			selected_stars[1] = selected_stars[0]
 			selected_stars[2] = selected_stars[1]
 			selected_stars.remove_at(2)
-	
-	inventory_manager()
-	
-	
+
 
 func initialize_move_stars():
 	deselect()
@@ -137,10 +129,7 @@ func initialize_move_stars():
 	warn_label.text = ("Ferramenta Selecionada: Mover")
 
 func state_move_stars(delta):
-	
-	
-	
-	inventory_manager()
+	pass
 
 func initialize_select_stars():
 	dragging = false
@@ -150,47 +139,22 @@ func initialize_select_stars():
 
 func state_select_stars(delta):
 	dragging = false
-	
-	if inventory_manager():
-		selected_star = null
-
-func inventory_manager():
-	pass
-	#if Input.is_action_just_pressed("CreateStar"):
-		#if state_cur != STATES.ADD_STAR:
-			#deselect()
-			#initialize_add_star()
-	#if Input.is_action_just_pressed("CreateLine"):
-		#if state_cur != STATES.ADD_LINE:
-			#deselect()
-			#initialize_add_line()
-	#if Input.is_action_just_pressed("MoveTool"):
-		#if state_cur != STATES.MOVE_STARS:
-			#deselect()
-			#initialize_move_stars()
-	#if Input.is_action_just_pressed("SelectTool"):
-		#if state_cur != STATES.SELECT:
-			#initialize_select_stars()
-			#deselect()
-	#if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
-		#initialize_none()
-		#deselect()
-		
 
 
-func create_line(selected_star):
+
+
+func create_line():
 	
 	if state_cur == STATES.ADD_LINE:
 		if selected_stars.size() == 2:
 			spawn_line()
 	
 
-
-func create_star(pos, size):
+func create_star(pos):
 	
 	var s = star.instantiate()
+	s.check_texture(star_size)
 	s.position = pos
-	s.s_size = size
 	$Stars.add_child(s)
 	warn_label.text = ("Estrela Criada em " + str(pos))
 
@@ -254,3 +218,14 @@ func _on_select_button_down():
 func _on_texture_rect_mouse_entered():
 	#$".".initialize_none()
 	pass
+
+
+@onready var t = $"GUI/Control Menu/Warning/Timer"
+
+func _on_warning_finished():
+	if t != null:
+		t.start()
+		await t.timeout
+		$"GUI/Control Menu/Warning".text = ""
+
+
