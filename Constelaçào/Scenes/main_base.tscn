@@ -36,16 +36,12 @@
 [ext_resource type="Theme" uid="uid://d4klxd0nfjfgl" path="res://Resources/main_base.tres" id="26_st2tv"]
 [ext_resource type="Texture2D" uid="uid://hxvjtgucsfj2" path="res://Artwork/UI/Tools/sound_on.png" id="36_jl6a2"]
 [ext_resource type="Texture2D" uid="uid://ds3dwgm0yl2w3" path="res://Artwork/UI/Tools/sound_off.png" id="37_vs1st"]
+[ext_resource type="Script" path="res://Scenes/SoundManager.gd" id="38_06hwi"]
 [ext_resource type="Texture2D" uid="uid://dpgul02n3nq1x" path="res://Artwork/UI/Tools/music_on.png" id="38_htveu"]
+[ext_resource type="AudioStream" uid="uid://1puatpj50610" path="res://Resources/Sounds/drag.wav" id="39_lmnun"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_018ih"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m5nmt"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nolcv"]
-bg_color = Color(1, 1, 0.921569, 0.34902)
 
 [sub_resource type="Animation" id="Animation_lg38q"]
 length = 0.001
@@ -615,19 +611,15 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 12.0
-offset_top = -9.0
-offset_right = 88.0
-offset_bottom = 23.0
+offset_left = 4.0
+offset_top = -11.0
+offset_right = 99.0
+offset_bottom = 26.0
 grow_vertical = 2
 theme = ExtResource("26_st2tv")
 theme_override_colors/font_color = Color(1, 1, 0.921569, 1)
-theme_override_colors/font_pressed_color = Color(0.388235, 0.388235, 0.356863, 1)
-theme_override_colors/font_hover_color = Color(0.670588, 0.670588, 0.615686, 1)
 theme_override_fonts/font = ExtResource("23_anpot")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_m5nmt")
-theme_override_styles/hover = SubResource("StyleBoxFlat_nolcv")
 text = "FILE"
 icon_alignment = 1
 item_count = 4
@@ -642,6 +634,7 @@ popup/item_3/id = 0
 script = ExtResource("26_6dnt3")
 
 [node name="Vignete" type="ColorRect" parent="GUI"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -674,6 +667,14 @@ ok_button_text = "Open"
 file_mode = 0
 access = 2
 root_subfolder = "Saves"
+
+[node name="Music" type="Node" parent="."]
+script = ExtResource("38_06hwi")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("39_lmnun")
+pitch_scale = 0.93
+bus = &"Effects"
 
 [connection signal="button_down" from="GUI/SkillEdit/SaveButton" to="GUI/SkillEdit" method="_on_save_button_button_down"]
 [connection signal="button_down" from="GUI/Control Menu/HBoxContainer/Help" to="GUI/Control Menu/ToolsMenu" method="_on_help_button_down"]

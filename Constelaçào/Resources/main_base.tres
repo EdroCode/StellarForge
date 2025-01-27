@@ -1,6 +1,9 @@
-[gd_resource type="Theme" load_steps=11 format=3 uid="uid://d4klxd0nfjfgl"]
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://d4klxd0nfjfgl"]
 
 [ext_resource type="FontFile" uid="uid://0rtn3xa50dfs" path="res://Artwork/Fonts/Mystery Font(1).ttf" id="1_cik1g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yycxi"]
+bg_color = Color(0.431373, 0.156863, 0.121569, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6w17n"]
 bg_color = Color(0.262745, 0.262745, 0.309804, 1)
@@ -57,6 +60,7 @@ default_font_size = 16
 FileDialog/colors/file_icon_color = Color(1, 1, 0.921569, 1)
 MenuButton/font_sizes/font_size = 32
 MenuButton/fonts/font = ExtResource("1_cik1g")
+MenuButton/styles/normal = SubResource("StyleBoxFlat_yycxi")
 Panel/styles/panel = SubResource("StyleBoxFlat_6w17n")
 PopupMenu/styles/hover = SubResource("StyleBoxFlat_ilr4c")
 PopupMenu/styles/labeled_separator_left = SubResource("StyleBoxLine_ngivq")

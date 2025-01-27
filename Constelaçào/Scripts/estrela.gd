@@ -94,6 +94,10 @@ func state_idle(delta):
 
 func initialize_selected():
 	
+	if Input.is_action_just_pressed("select"):
+		audio_manager.play_sound("res://Resources/Sounds/click3.wav", 1.29, 5)
+	
+	
 	check_texture(s_size)
 	arc.visible = true
 	if parent.star_selected == false:
@@ -117,7 +121,9 @@ func initialize_selected():
 
 func state_selected(delta):
 	
-	update_scale(delta)
+	update_scale(delta, arc)
+	update_scale(delta, star)
+	
 	
 	arc.visible = true
 	if Input.is_action_just_pressed("Delete"):
@@ -126,9 +132,16 @@ func state_selected(delta):
 		if parent.state_cur == 2:
 			initialize_drag()
 
+@onready var audio_manager = parent.audio_manager
 
 func initialize_drag():
 	
+	
+	var p = randf_range(0.93,1.3)
+	print(p)
+	audio_manager.play_sound("res://Resources/Sounds/click2.wav",p , 5)
+	
+	check_texture(s_size)
 	scale += Vector2(1,1)
 	anim_nxt = "drag"
 	state_nxt = STATES.DRAG
@@ -136,8 +149,12 @@ func initialize_drag():
 
 
 func state_drag(delta):
+	
+	
+	
 	global_position = get_global_mouse_position()
 	if Input.is_action_just_pressed("select"):
+		
 		global_position = get_global_mouse_position()
 		initialize_idle()
 		parent.dragging = false
@@ -205,11 +222,11 @@ func check_texture(size):
 			$Arc.texture = null
 			$Arc.scale = Vector2(1,1)
 			
+ 
 
-
-func update_scale(delta):
-	var scale_speed = 1.3
+func update_scale(delta, target):
+	var scale_speed = 2.7
 	
 	t += delta / scale_speed 
 	var scale_factor = abs(2.0 * (fposmod(t, 1.0)) - 1.0) 
-	$Arc.scale = scale_min.lerp(scale_max, scale_factor) 
+	target.scale = scale_min.lerp(scale_max, scale_factor) 

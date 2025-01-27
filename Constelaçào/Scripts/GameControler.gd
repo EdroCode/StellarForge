@@ -2,6 +2,8 @@ extends Node2D
 
 enum STATES {ADD_STAR, ADD_LINE, MOVE_STARS, SELECT, NONE}
 
+@onready var audio_manager = $Music
+
 # References
 @onready var warn_label = $"GUI/Control Menu/Warning"
 var selected_stars = []
@@ -30,6 +32,7 @@ func _notification(what):
 		
 
 func _ready():
+	$GUI/Vignete.visible = true
 	state_cur = -1
 	state_prv = -1
 	state_nxt = STATES.NONE
@@ -59,6 +62,8 @@ func _process(delta):
 			state_move_stars(delta)
 		STATES.SELECT:
 			state_select_stars(delta)
+	
+	
 
 func initialize_none():
 	$"GUI/Control Menu/ToolsMenu/ColorPallete/TextureRect".visible = false
@@ -80,7 +85,9 @@ func initialize_add_star():
 
 func state_add_star(delta):
 	
-	pass
+	if Input.is_action_just_pressed("select"):
+		audio_manager.play_sound("res://Resources/Sounds/click.wav", 1, 0)
+
 
 func _unhandled_input(event):
 	if event.is_action_pressed("select"):
@@ -116,6 +123,8 @@ func initialize_add_line():
 	selected_stars.clear()
 
 func state_add_line(delta):
+	
+	
 	
 	if selected_stars.size() > 2:
 			selected_stars[1] = selected_stars[0]
@@ -167,6 +176,8 @@ func deselect():
 
 
 func spawn_line():
+	
+	
 	
 	var old_star
 	old_star = selected_stars[1]
