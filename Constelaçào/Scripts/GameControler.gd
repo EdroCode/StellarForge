@@ -85,8 +85,7 @@ func initialize_add_star():
 
 func state_add_star(delta):
 	
-	if Input.is_action_just_pressed("select"):
-		audio_manager.play_sound("res://Resources/Sounds/click.wav", 1, 0)
+	pass
 
 
 func _unhandled_input(event):

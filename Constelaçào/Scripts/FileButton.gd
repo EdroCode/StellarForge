@@ -146,7 +146,7 @@ func load_game(file_path):
 
 		# Get the data from the JSON object.
 		var node_data = json.data
-
+		
 		# Firstly, we need to create the object and add it to the tree and set its position.
 		var new_object = load(node_data["filename"]).instantiate()
 		get_node(node_data["parent"]).add_child(new_object)
@@ -157,9 +157,13 @@ func load_game(file_path):
 			new_object.skill_name = node_data["title"]
 			new_object.skill_description = node_data["description"]
 			
+			$Timer.start()
+			await $Timer.timeout
+			$Timer.stop()
 			
 			
-		elif new_object.is_in_group("Line"):
+		
+		if new_object.is_in_group("Line"):
 			var s1 = get_tree().get_first_node_in_group(node_data["info_code1"])
 			var s2 = get_tree().get_first_node_in_group(node_data["info_code2"])
 			
@@ -167,6 +171,12 @@ func load_game(file_path):
 			new_object.parent.append(s1)
 			new_object.parent.append(s2)
 			
+			
+			$"../../../Music".play_sound("res://Resources/Sounds/click3.wav", 1.29, 5)
+			
+			$Timer.start()
+			await $Timer.timeout
+			$Timer.stop()
 			#print("Line Spawned with parents = " + str(s1) + " and " + str(s2))
 			
 

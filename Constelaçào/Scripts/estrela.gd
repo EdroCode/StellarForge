@@ -42,6 +42,8 @@ var scale_max = Vector2(1.1, 1.1)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
+	audio_manager.play_sound("res://Resources/Sounds/click.wav", 1, 0)
 	state_cur = -1
 	state_prv = -1
 	initialize_idle()

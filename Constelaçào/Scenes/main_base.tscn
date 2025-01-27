@@ -633,6 +633,9 @@ popup/item_3/text = "Load"
 popup/item_3/id = 0
 script = ExtResource("26_6dnt3")
 
+[node name="Timer" type="Timer" parent="GUI/Control Menu/FileButton"]
+wait_time = 0.1
+
 [node name="Vignete" type="ColorRect" parent="GUI"]
 visible = false
 anchors_preset = 15
