@@ -22,16 +22,13 @@ var state_prv : int
 var star_size = "small"
 var line_mode 
 
-func _notification(what):
-	if what == NOTIFICATION_WM_CLOSE_REQUEST:
-		get_tree().quit() # default behavior
-		
-		var file = FileAccess.open("res://Saves/session_save.cfg", FileAccess.WRITE)
-		file.store_buffer(PackedByteArray())  # This will clear the file by writing an empty string.
-		file.close()
-		
+var selected_tree
 
 func _ready():
+	
+	$GUI/SkillTreeIdentify.text = GameManager.tree_text
+	selected_tree = GameManager.selected_tree
+	
 	$GUI/Vignete.visible = true
 	state_cur = -1
 	state_prv = -1
@@ -39,6 +36,10 @@ func _ready():
 	
 	warn_label.text = ""
 	initialize_none()
+	
+	var file = FileAccess.open("res://Saves/session_save.cfg", FileAccess.WRITE)
+	file.store_buffer(PackedByteArray())  # This will clear the file by writing an empty string.
+	file.close()
 
 func _process(delta):
 	#print(can_add_star())
@@ -70,7 +71,7 @@ func initialize_none():
 	dragging = false
 	warn_label.text = ("Ferramenta Selecionada: None")
 	state_nxt = STATES.NONE
-	$GUI/SkillEdit.visible = false
+	#$GUI/SkillEdit.visible = false
 	deselect()
 
 func state_none(delta):
@@ -79,7 +80,7 @@ func state_none(delta):
 func initialize_add_star():
 	dragging = false
 	deselect()
-	$GUI/SkillEdit.visible = false
+	#$GUI/SkillEdit.visible = false
 	state_nxt = STATES.ADD_STAR
 	warn_label.text = ("Ferramenta Selecionada: Criar Estrela")
 
@@ -90,7 +91,7 @@ func state_add_star(delta):
 
 func _unhandled_input(event):
 	if event.is_action_pressed("select"):
-		if can_add_star():
+		if can_add_star() and state_cur == STATES.ADD_STAR:
 			var pos = get_local_mouse_position()
 			create_star(pos)
 	if Input.is_action_just_pressed("CreateStar"):
@@ -116,7 +117,7 @@ func _unhandled_input(event):
 func initialize_add_line():
 	dragging = false
 	deselect()
-	$GUI/SkillEdit.visible = false
+	#$GUI/SkillEdit.visible = false
 	state_nxt = STATES.ADD_LINE
 	warn_label.text = ("Ferramenta Selecionada: Criar Linha")
 	selected_stars.clear()
@@ -161,8 +162,8 @@ func create_line():
 func create_star(pos):
 	
 	var s = star.instantiate()
-	s.check_texture(star_size)
 	s.position = pos
+	s.s_size = star_size
 	$Stars.add_child(s)
 	warn_label.text = ("Estrela Criada em " + str(pos))
 
@@ -197,12 +198,13 @@ func spawn_line():
 	deselect()
 	warn_label.text = ""
 
+var mouse_on_area
 
 func can_add_star():
 	
 	var p = get_global_mouse_position()
 	
-	if p.y > 48 and p.y < 540 and p.x > 0 and p.x < 960 and state_cur == 0:
+	if mouse_on_area:
 		
 		
 		return true
@@ -239,3 +241,11 @@ func _on_warning_finished():
 		$"GUI/Control Menu/Warning".text = ""
 
 
+
+
+func _on_area_2d_mouse_entered():
+	mouse_on_area = true
+
+
+func _on_area_2d_mouse_exited():
+	mouse_on_area = false

@@ -15,6 +15,6 @@ func _process(delta):
 
 
 func _on_timer_timeout():
-	get_tree().change_scene_to_file("res://Scenes/main_base.tscn")
+	get_tree().change_scene_to_file("res://Scenes/tree_viewer.tscn")
 
 

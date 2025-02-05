@@ -1,47 +1,81 @@
-[gd_scene load_steps=44 format=3 uid="uid://ce88oyml5ok6q"]
+[gd_scene load_steps=57 format=3 uid="uid://ce88oyml5ok6q"]
 
 [ext_resource type="Script" path="res://Scripts/GameControler.gd" id="1_1y343"]
-[ext_resource type="Script" path="res://Scripts/CameraControl.gd" id="3_3fy6h"]
-[ext_resource type="Texture2D" uid="uid://cjci4sp0asq2t" path="res://Artwork/UI/Tools/1.png" id="3_h4ajo"]
-[ext_resource type="Texture2D" uid="uid://tgckc1g66u7r" path="res://Artwork/UI/Tools/2.png" id="4_5svvl"]
-[ext_resource type="Texture2D" uid="uid://bweofvqed0tjm" path="res://Artwork/UI/Geral/border.png" id="4_tivhf"]
-[ext_resource type="Script" path="res://Scripts/SkillEdit.gd" id="4_uldr8"]
-[ext_resource type="Texture2D" uid="uid://tg2gkyexr4kf" path="res://Artwork/UI/Geral/skill.png" id="5_2oqy2"]
-[ext_resource type="Texture2D" uid="uid://c0l5ewsfht1rg" path="res://Artwork/UI/Tools/3.png" id="5_dyyxj"]
-[ext_resource type="Script" path="res://Scripts/ToolsMenu.gd" id="5_y4l80"]
-[ext_resource type="Texture2D" uid="uid://c0tattxcwlqh0" path="res://Artwork/UI/Tools/4.png" id="6_2k12u"]
-[ext_resource type="Texture2D" uid="uid://dsvbn6bxvnn1a" path="res://Artwork/UI/Tools/save.png" id="6_pjndk"]
-[ext_resource type="Texture2D" uid="uid://b8hipnkomvirw" path="res://Artwork/Fonts/exclamation.png" id="7_c36rh"]
-[ext_resource type="Texture2D" uid="uid://dlajobyavos2o" path="res://Artwork/UI/Tools/bucket.png" id="7_gn7w0"]
-[ext_resource type="Texture2D" uid="uid://blqse4ahn208y" path="res://Artwork/UI/Tools/ads12.png" id="7_mk2dr"]
-[ext_resource type="Texture2D" uid="uid://sbh7123k1ua0" path="res://Artwork/UI/Tools/asdadsd12.png" id="8_l8ccs"]
+[ext_resource type="Texture2D" uid="uid://bqxd77jyhwayx" path="res://Artwork/Cifra/Asset04PNGREDIMENSIONADO.png" id="2_rhw2l"]
+[ext_resource type="Script" path="res://Scripts/ELements/CameraControl.gd" id="3_3fy6h"]
+[ext_resource type="Texture2D" uid="uid://cjci4sp0asq2t" path="res://Artwork/UI/Tools/Boxed/1.png" id="3_h4ajo"]
+[ext_resource type="Texture2D" uid="uid://d0hmpei5twvw0" path="res://Artwork/Cifra/Asset03REDIMENSIONADO.png" id="3_r8ixi"]
+[ext_resource type="Texture2D" uid="uid://tgckc1g66u7r" path="res://Artwork/UI/Tools/Boxed/2.png" id="4_5svvl"]
+[ext_resource type="Texture2D" uid="uid://bweofvqed0tjm" path="res://Geral/border.png" id="4_tivhf"]
+[ext_resource type="Script" path="res://Scripts/ELements/SkillEdit.gd" id="4_uldr8"]
+[ext_resource type="Texture2D" uid="uid://c0l5ewsfht1rg" path="res://Artwork/UI/Tools/Boxed/3.png" id="5_dyyxj"]
+[ext_resource type="Texture2D" uid="uid://hg54khgadn5f" path="res://Artwork/Cifra/Asset01.png" id="5_f28np"]
+[ext_resource type="Script" path="res://Scripts/ELements/ToolsMenu.gd" id="5_y4l80"]
+[ext_resource type="Texture2D" uid="uid://c0tattxcwlqh0" path="res://Artwork/UI/Tools/Boxed/4.png" id="6_2k12u"]
+[ext_resource type="Texture2D" uid="uid://dlajobyavos2o" path="res://Artwork/UI/Tools/Boxed/bucket.png" id="7_gn7w0"]
+[ext_resource type="Texture2D" uid="uid://blqse4ahn208y" path="res://Artwork/UI/Tools/Boxed/ads12.png" id="7_mk2dr"]
+[ext_resource type="Texture2D" uid="uid://l6vi83rxrqm5" path="res://Artwork/UI/Tools/Icons/save.png" id="7_x60bi"]
+[ext_resource type="Texture2D" uid="uid://sbh7123k1ua0" path="res://Artwork/UI/Tools/Boxed/asdadsd12.png" id="8_l8ccs"]
 [ext_resource type="Texture2D" uid="uid://dc5xte6mg7cqf" path="res://Artwork/Fonts/question.png" id="8_pm2ep"]
-[ext_resource type="Texture2D" uid="uid://cu22q1bpup1gq" path="res://Artwork/UI/Geral/bar-sheet.png" id="8_tswst"]
-[ext_resource type="Texture2D" uid="uid://c0f0h5k7g5ulp" path="res://Artwork/UI/Tools/asdasd.png" id="8_uwl5n"]
-[ext_resource type="Texture2D" uid="uid://kc2s5tyo1bv8" path="res://Artwork/UI/Tools/asdasddas.png" id="9_1nrud"]
-[ext_resource type="Texture2D" uid="uid://dvg6qitsu3pbe" path="res://Artwork/UI/Geral/colorpicker.png" id="9_fbcid"]
-[ext_resource type="Script" path="res://Scripts/ColorPallete.gd" id="9_qfxu6"]
-[ext_resource type="Texture2D" uid="uid://cupxk3ruxc8c7" path="res://Artwork/UI/Tools/check.png" id="11_pidg6"]
-[ext_resource type="Texture2D" uid="uid://s77vd4njftsn" path="res://Artwork/UI/Tools/addgold.png" id="15_5xgoq"]
-[ext_resource type="Texture2D" uid="uid://dre82jnfnweei" path="res://Artwork/UI/Tools/music_off.png" id="15_l1abg"]
-[ext_resource type="Texture2D" uid="uid://dxw2y8vgg4k1o" path="res://Artwork/UI/Tools/linegold.png" id="17_skq0f"]
-[ext_resource type="Texture2D" uid="uid://c1hk0dyvyvpqe" path="res://Artwork/UI/Tools/movegold.png" id="19_vis5n"]
-[ext_resource type="Texture2D" uid="uid://fd06gxe14tq8" path="res://Artwork/UI/Tools/smalll.png" id="20_fbjbo"]
-[ext_resource type="Texture2D" uid="uid://dj0yonqowwuj2" path="res://Artwork/UI/Tools/arrowgold.png" id="21_001ou"]
+[ext_resource type="Texture2D" uid="uid://c0f0h5k7g5ulp" path="res://Artwork/UI/Tools/Boxed/asdasd.png" id="8_uwl5n"]
+[ext_resource type="Texture2D" uid="uid://kc2s5tyo1bv8" path="res://Artwork/UI/Tools/Boxed/asdasddas.png" id="9_1nrud"]
+[ext_resource type="Texture2D" uid="uid://dvg6qitsu3pbe" path="res://Geral/colorpicker.png" id="9_fbcid"]
+[ext_resource type="Texture2D" uid="uid://dpc8tfyuhenh0" path="res://Artwork/Cifra/Asset05.png" id="9_kjumv"]
+[ext_resource type="Script" path="res://Scripts/ELements/ColorPallete.gd" id="9_qfxu6"]
+[ext_resource type="Texture2D" uid="uid://cupxk3ruxc8c7" path="res://Artwork/UI/Tools/Boxed/check.png" id="11_pidg6"]
+[ext_resource type="Texture2D" uid="uid://coo4vr78or616" path="res://Artwork/UI/Tools/Icons/sound_on.png" id="13_gqsqo"]
+[ext_resource type="Texture2D" uid="uid://dhp6w7b5lil5e" path="res://Artwork/UI/Tools/Icons/mute.png" id="14_8kc17"]
+[ext_resource type="Texture2D" uid="uid://s77vd4njftsn" path="res://Artwork/UI/Tools/Boxed/addgold.png" id="15_5xgoq"]
+[ext_resource type="Texture2D" uid="uid://b246d28q22r7i" path="res://Artwork/UI/Tools/Icons/music_on.png" id="15_yprgv"]
+[ext_resource type="Texture2D" uid="uid://dcxm8s0j6nnp5" path="res://Artwork/UI/Tools/Icons/music_off.png" id="16_c6ffa"]
+[ext_resource type="Texture2D" uid="uid://b4jj53n2vbj26" path="res://Artwork/UI/Tools/Icons/temporarymap.png" id="17_fwyaw"]
+[ext_resource type="Texture2D" uid="uid://b13potokwspl0" path="res://Artwork/UI/Tools/Icons/settings.png" id="17_qqqkk"]
+[ext_resource type="Texture2D" uid="uid://dxw2y8vgg4k1o" path="res://Artwork/UI/Tools/Boxed/linegold.png" id="17_skq0f"]
+[ext_resource type="FontFile" uid="uid://blarstafwt6t6" path="res://Artwork/Fonts/Mystery Font.ttf" id="18_aogah"]
+[ext_resource type="Texture2D" uid="uid://c1hk0dyvyvpqe" path="res://Artwork/UI/Tools/Boxed/movegold.png" id="19_vis5n"]
+[ext_resource type="Texture2D" uid="uid://fd06gxe14tq8" path="res://Artwork/UI/Tools/Boxed/smalll.png" id="20_fbjbo"]
+[ext_resource type="Texture2D" uid="uid://dj0yonqowwuj2" path="res://Artwork/UI/Tools/Boxed/arrowgold.png" id="21_001ou"]
+[ext_resource type="Texture2D" uid="uid://bl5ybp418mbul" path="res://Artwork/UI/Tools/Icons/add1.png" id="22_b2j8b"]
 [ext_resource type="FontFile" uid="uid://0rtn3xa50dfs" path="res://Artwork/Fonts/Mystery Font(1).ttf" id="23_anpot"]
-[ext_resource type="Texture2D" uid="uid://7fwl0pr10ata" path="res://Artwork/UI/Tools/plus.png" id="24_ckonv"]
-[ext_resource type="Texture2D" uid="uid://bc5lu45nereln" path="res://Artwork/UI/Tools/bucket-GOLD.png" id="24_dmqcu"]
-[ext_resource type="Texture2D" uid="uid://ck8oallacorcq" path="res://Artwork/UI/Tools/minus.png" id="25_rlmj3"]
+[ext_resource type="Texture2D" uid="uid://7fwl0pr10ata" path="res://Artwork/UI/Tools/Boxed/plus.png" id="24_ckonv"]
+[ext_resource type="Texture2D" uid="uid://bc5lu45nereln" path="res://Artwork/UI/Tools/Boxed/bucket-GOLD.png" id="24_dmqcu"]
+[ext_resource type="Texture2D" uid="uid://6aru1qgkcl2x" path="res://Artwork/UI/Tools/Icons/li.png" id="24_inl0k"]
+[ext_resource type="Texture2D" uid="uid://ck8oallacorcq" path="res://Artwork/UI/Tools/Boxed/minus.png" id="25_rlmj3"]
 [ext_resource type="Script" path="res://Scripts/FileButton.gd" id="26_6dnt3"]
+[ext_resource type="Texture2D" uid="uid://cp4ytpgcygiv2" path="res://Artwork/UI/Tools/Icons/mv1.png" id="26_50bsw"]
 [ext_resource type="Theme" uid="uid://d4klxd0nfjfgl" path="res://Resources/main_base.tres" id="26_st2tv"]
-[ext_resource type="Texture2D" uid="uid://hxvjtgucsfj2" path="res://Artwork/UI/Tools/sound_on.png" id="36_jl6a2"]
-[ext_resource type="Texture2D" uid="uid://ds3dwgm0yl2w3" path="res://Artwork/UI/Tools/sound_off.png" id="37_vs1st"]
+[ext_resource type="Texture2D" uid="uid://ddydyv5bbpwf8" path="res://Artwork/UI/Tools/Icons/se.png" id="28_smn5l"]
 [ext_resource type="Script" path="res://Scenes/SoundManager.gd" id="38_06hwi"]
-[ext_resource type="Texture2D" uid="uid://dpgul02n3nq1x" path="res://Artwork/UI/Tools/music_on.png" id="38_htveu"]
 [ext_resource type="AudioStream" uid="uid://1puatpj50610" path="res://Resources/Sounds/drag.wav" id="39_lmnun"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_018ih"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Gradient" id="Gradient_xumwq"]
+offsets = PackedFloat32Array(0, 0.292208)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fplka"]
+gradient = SubResource("Gradient_xumwq")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wlqva"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxdit"]
+content_margin_left = 13.0
+content_margin_top = 13.0
+content_margin_right = 13.0
+content_margin_bottom = 13.0
+bg_color = Color(0.537255, 0.34902, 0.27451, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.301961, 0.196078, 0.152941, 1)
+
+[sub_resource type="Theme" id="Theme_t4n8r"]
+MenuButton/styles/normal = SubResource("StyleBoxFlat_wlqva")
+PopupMenu/fonts/font = ExtResource("18_aogah")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_yxdit")
 
 [sub_resource type="Animation" id="Animation_lg38q"]
 length = 0.001
@@ -83,6 +117,7 @@ _data = {
 script = ExtResource("1_1y343")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = 83769.0
 offset_top = 50608.0
 offset_right = 97591.0
@@ -90,6 +125,20 @@ offset_bottom = 59633.0
 scale = Vector2(-10.413, -10.413)
 mouse_filter = 2
 color = Color(0.376471, 0.376471, 0.439216, 1)
+
+[node name="Fundo" type="Sprite2D" parent="."]
+position = Vector2(480, 270)
+texture = ExtResource("2_rhw2l")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(480, 270)
+
+[node name="Asset03redimensionado" type="Sprite2D" parent="Area2D"]
+position = Vector2(45, 28)
+texture = ExtResource("3_r8ixi")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-167, 228, 290, 182, 249, -198, -209, -147)
 
 [node name="Stars" type="Node2D" parent="."]
 
@@ -119,26 +168,27 @@ script = ExtResource("4_uldr8")
 
 [node name="TextureRect" type="TextureRect" parent="GUI/SkillEdit" groups=["is_hovered()"]]
 layout_mode = 0
-offset_left = 27.0
-offset_top = 91.0
-offset_right = 91.0
-offset_bottom = 219.0
+offset_left = 33.3333
+offset_top = 89.1667
+offset_right = 107.333
+offset_bottom = 227.167
 scale = Vector2(3, 3)
-texture = ExtResource("5_2oqy2")
+texture = ExtResource("5_f28np")
 
 [node name="Title" type="LineEdit" parent="GUI/SkillEdit"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 34.0
-offset_top = 148.0
-offset_right = 87.0
-offset_bottom = -308.0
+offset_left = 48.0
+offset_top = 108.0
+offset_right = 58.0
+offset_bottom = -348.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.59789, 0.59789)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.639216, 0.639216, 0.639216, 1)
 theme_override_fonts/font = ExtResource("23_anpot")
 theme_override_font_sizes/font_size = 32
 placeholder_text = "Here"
@@ -150,14 +200,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 36.0
-offset_top = 210.0
-offset_right = 89.0
-offset_bottom = 100.0
+offset_left = 55.0
+offset_top = 150.0
+offset_right = 75.0
+offset_bottom = 159.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.59789, 0.59789)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_placeholder_color = Color(0.6, 0.6, 0.6, 1)
 theme_override_fonts/font = ExtResource("23_anpot")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_018ih")
@@ -173,15 +224,15 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -74.1667
-offset_top = -73.3333
-offset_right = -58.1667
-offset_bottom = -57.3333
+offset_left = -35.8333
+offset_top = -85.8333
+offset_right = -19.8333
+offset_bottom = -69.8333
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(3, 3)
+scale = Vector2(2, 2)
 mouse_default_cursor_shape = 2
-texture_normal = ExtResource("6_pjndk")
+texture_normal = ExtResource("7_x60bi")
 
 [node name="Border" type="TextureRect" parent="GUI"]
 offset_right = 960.0
@@ -198,32 +249,41 @@ offset_bottom = -500.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="GUI/Control Menu"]
-layout_mode = 0
-offset_right = 960.0
-offset_bottom = 40.0
+[node name="ColorRect" type="TextureRect" parent="GUI/Control Menu"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 960.0
+offset_top = 31.0
+offset_right = 64.0
+offset_bottom = 991.0
+grow_horizontal = 2
+rotation = 1.57079
 mouse_filter = 2
-color = Color(0.890196, 0.870588, 0.858824, 1)
+texture = SubResource("GradientTexture2D_fplka")
 
 [node name="TextureRect" type="TextureRect" parent="GUI/Control Menu"]
 layout_mode = 0
 offset_right = 960.0
-offset_bottom = 48.0
+offset_bottom = 55.0
 mouse_filter = 0
-texture = ExtResource("8_tswst")
+texture = ExtResource("9_kjumv")
 
 [node name="Titulo" type="Label" parent="GUI/Control Menu"]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 154.0
-offset_right = -167.0
-offset_bottom = 54.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -110.0
+offset_top = 4.0
+offset_right = 110.0
+offset_bottom = 58.0
 grow_horizontal = 2
+scale = Vector2(0.7, 0.7)
 theme_override_colors/font_color = Color(1, 1, 0.921569, 1)
 theme_override_fonts/font = ExtResource("23_anpot")
 theme_override_font_sizes/font_size = 32
-text = "Stellar Forge"
+text = "Constelacoes"
 horizontal_alignment = 1
 vertical_alignment = 1
 text_direction = 1
@@ -244,10 +304,10 @@ text = "Test"
 layout_mode = 0
 offset_left = 102.0
 offset_top = 8.0
-offset_right = 526.0
+offset_right = 529.0
 offset_bottom = 28.0
 scale = Vector2(2, 2)
-theme_override_constants/separation = 2
+theme_override_constants/separation = 3
 alignment = 2
 
 [node name="Help" type="TextureButton" parent="GUI/Control Menu/HBoxContainer"]
@@ -257,6 +317,7 @@ mouse_default_cursor_shape = 2
 texture_normal = ExtResource("8_pm2ep")
 
 [node name="Plus" type="TextureButton" parent="GUI/Control Menu/HBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 2
 mouse_default_cursor_shape = 2
@@ -264,6 +325,7 @@ toggle_mode = true
 texture_normal = ExtResource("24_ckonv")
 
 [node name="Minus" type="TextureButton" parent="GUI/Control Menu/HBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 2
 mouse_default_cursor_shape = 2
@@ -275,22 +337,44 @@ layout_mode = 2
 size_flags_vertical = 2
 mouse_default_cursor_shape = 2
 toggle_mode = true
-texture_normal = ExtResource("36_jl6a2")
-texture_pressed = ExtResource("37_vs1st")
+texture_normal = ExtResource("13_gqsqo")
+texture_pressed = ExtResource("14_8kc17")
 
 [node name="Music" type="TextureButton" parent="GUI/Control Menu/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 2
 mouse_default_cursor_shape = 2
 toggle_mode = true
-texture_normal = ExtResource("38_htveu")
-texture_pressed = ExtResource("15_l1abg")
+texture_normal = ExtResource("15_yprgv")
+texture_pressed = ExtResource("16_c6ffa")
 
 [node name="SkillOpen" type="TextureButton" parent="GUI/Control Menu/HBoxContainer"]
 layout_mode = 2
 mouse_default_cursor_shape = 2
 toggle_mode = true
-texture_normal = ExtResource("7_c36rh")
+texture_normal = ExtResource("17_fwyaw")
+
+[node name="FileButton" type="MenuButton" parent="GUI/Control Menu/HBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_t4n8r")
+theme_override_colors/font_color = Color(1, 1, 0.921569, 1)
+theme_override_fonts/font = ExtResource("23_anpot")
+icon = ExtResource("17_qqqkk")
+icon_alignment = 1
+item_count = 4
+popup/item_0/text = "Clear"
+popup/item_0/id = 2
+popup/item_1/text = "Save"
+popup/item_1/id = 1
+popup/item_2/text = "Save as"
+popup/item_2/id = 3
+popup/item_3/text = "Load"
+popup/item_3/id = 0
+script = ExtResource("26_6dnt3")
+
+[node name="Timer" type="Timer" parent="GUI/Control Menu/HBoxContainer/FileButton"]
+wait_time = 0.1
 
 [node name="Warning" type="RichTextLabel" parent="GUI/Control Menu"]
 layout_mode = 0
@@ -315,27 +399,28 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -48.0
-offset_top = 51.0
-offset_right = -31.0
-offset_bottom = 135.0
+offset_left = -41.9999
+offset_top = 76.0
+offset_right = -24.9999
+offset_bottom = 160.0
 grow_horizontal = 0
 scale = Vector2(2.5, 2.5)
 mouse_filter = 0
-theme_override_constants/separation = 1
+theme_override_constants/separation = -7
 alignment = 2
 vertical = true
 script = ExtResource("5_y4l80")
-ad1 = ExtResource("3_h4ajo")
+ad1 = ExtResource("22_b2j8b")
 ad2 = ExtResource("15_5xgoq")
-li1 = ExtResource("4_5svvl")
+li1 = ExtResource("24_inl0k")
 li2 = ExtResource("17_skq0f")
-mv1 = ExtResource("5_dyyxj")
+mv1 = ExtResource("26_50bsw")
 mv2 = ExtResource("19_vis5n")
-se1 = ExtResource("6_2k12u")
+se1 = ExtResource("28_smn5l")
 se2 = ExtResource("21_001ou")
 
 [node name="ColorPallete" type="TextureButton" parent="GUI/Control Menu/ToolsMenu"]
+visible = false
 layout_mode = 2
 mouse_default_cursor_shape = 2
 toggle_mode = true
@@ -606,36 +691,6 @@ mouse_default_cursor_shape = 2
 toggle_mode = true
 texture_normal = ExtResource("6_2k12u")
 
-[node name="FileButton" type="MenuButton" parent="GUI/Control Menu"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 4.0
-offset_top = -11.0
-offset_right = 99.0
-offset_bottom = 26.0
-grow_vertical = 2
-theme = ExtResource("26_st2tv")
-theme_override_colors/font_color = Color(1, 1, 0.921569, 1)
-theme_override_fonts/font = ExtResource("23_anpot")
-theme_override_font_sizes/font_size = 32
-text = "FILE"
-icon_alignment = 1
-item_count = 4
-popup/item_0/text = "Clear"
-popup/item_0/id = 2
-popup/item_1/text = "Save"
-popup/item_1/id = 1
-popup/item_2/text = "Save as"
-popup/item_2/id = 3
-popup/item_3/text = "Load"
-popup/item_3/id = 0
-script = ExtResource("26_6dnt3")
-
-[node name="Timer" type="Timer" parent="GUI/Control Menu/FileButton"]
-wait_time = 0.1
-
 [node name="Vignete" type="ColorRect" parent="GUI"]
 visible = false
 anchors_preset = 15
@@ -651,7 +706,35 @@ libraries = {
 "": SubResource("AnimationLibrary_lvfno")
 }
 
+[node name="EnergyBar" type="Control" parent="GUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ProgressBar" type="ProgressBar" parent="GUI/EnergyBar"]
+layout_mode = 0
+offset_left = 788.0
+offset_top = 498.0
+offset_right = 946.0
+offset_bottom = 525.0
+max_value = 10.0
+
+[node name="SkillTreeIdentify" type="Label" parent="GUI"]
+offset_left = 311.0
+offset_top = 501.0
+offset_right = 783.0
+offset_bottom = 541.0
+rotation = -0.0919783
+theme = ExtResource("26_st2tv")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "SkillTree 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="SaveDialog" type="FileDialog" parent="."]
+title = ""
 initial_position = 1
 size = Vector2i(512, 330)
 min_size = Vector2i(200, 71)
@@ -679,6 +762,8 @@ stream = ExtResource("39_lmnun")
 pitch_scale = 0.93
 bus = &"Effects"
 
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
 [connection signal="button_down" from="GUI/SkillEdit/SaveButton" to="GUI/SkillEdit" method="_on_save_button_button_down"]
 [connection signal="button_down" from="GUI/Control Menu/HBoxContainer/Help" to="GUI/Control Menu/ToolsMenu" method="_on_help_button_down"]
 [connection signal="button_down" from="GUI/Control Menu/HBoxContainer/Plus" to="GUI/Control Menu/ToolsMenu" method="_on_plus_button_down"]
@@ -711,5 +796,5 @@ bus = &"Effects"
 [connection signal="button_down" from="GUI/Control Menu/ToolsMenu/2-Line/Traced" to="GUI/Control Menu/ToolsMenu" method="_on_traced_button_down"]
 [connection signal="button_down" from="GUI/Control Menu/ToolsMenu/3-Move" to="." method="_on_move_button_down"]
 [connection signal="button_down" from="GUI/Control Menu/ToolsMenu/4-Select" to="." method="_on_select_button_down"]
-[connection signal="confirmed" from="SaveDialog" to="GUI/Control Menu/FileButton" method="_on_save_dialog_confirmed"]
-[connection signal="file_selected" from="SaveDialog" to="GUI/Control Menu/FileButton" method="_on_save_dialog_file_selected"]
+[connection signal="confirmed" from="SaveDialog" to="GUI/Control Menu/HBoxContainer/FileButton" method="_on_save_dialog_confirmed"]
+[connection signal="file_selected" from="SaveDialog" to="GUI/Control Menu/HBoxContainer/FileButton" method="_on_save_dialog_file_selected"]

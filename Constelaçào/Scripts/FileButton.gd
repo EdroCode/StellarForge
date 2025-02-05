@@ -1,10 +1,10 @@
 extends MenuButton
 
-@onready var save_dialog = $"../../../SaveDialog"
-@onready var load_dialog = $"../../../LoadDialog"
+@onready var save_dialog = $"../../../../SaveDialog"
+@onready var load_dialog = $"../../../../LoadDialog"
 
-@onready var warn = $"../Warning"
-
+@onready var warn = $"../../Warning"
+@onready var m_player = $"../../../../Music"
 var current_save = null
 
 # Called when the node enters the scene tree for the first time.
@@ -41,7 +41,9 @@ func dir_selected(dir: String):
 
 func save():
 	var save_file
-	$"../../SkillEdit".visible = false
+	#$"../../SkillEdit".visible = false
+	
+	var path = "res://Saves/Trees/" + $"../../../..".selected_tree
 	
 	if current_save == null:
 		save_file = FileAccess.open("res://Saves/session_save.cfg", FileAccess.WRITE)
@@ -71,7 +73,7 @@ func save():
 		save_file.store_line(json_string)
 		
 	
-	$"../Warning".text = "Game saved in " + str(save_file)
+	#$"../Warning".text = "Game saved in " + str(save_file)
 
 
 
@@ -82,7 +84,7 @@ func save():
 # dict of relevant variables.
 func save_game(path):
 	
-	$"../../SkillEdit".visible = false
+	#$"../../SkillEdit".visible = false
 	
 	var save_file = FileAccess.open(path, FileAccess.WRITE)
 	var save_nodes = get_tree().get_nodes_in_group("Persist")
@@ -111,14 +113,14 @@ func save_game(path):
 		save_file.store_line(json_string)
 		
 	
-		$"../Warning".text = "Game saved"
+		#$"../Warning".text = "Game saved"
 
 
 # Note: This can be called from anywhere inside the tree. This function
 # is path independent.
 func load_game(file_path):
 	
-	$"../../SkillEdit".visible = false	
+	#$"../../SkillEdit".visible = false	
 	warn = ("Loading " + str(file_path))
 	
 	print("Save selected: " + str(file_path))
@@ -153,10 +155,10 @@ func load_game(file_path):
 		if new_object.is_in_group("Star"):
 			new_object.position = Vector2(node_data["pos_x"], node_data["pos_y"])
 			new_object.add_to_group(node_data["info_code"])
-			new_object.check_texture(node_data["size"])
 			new_object.skill_name = node_data["title"]
+			new_object.s_size = (node_data["size"])
+			new_object.texture_update(node_data["size"])
 			new_object.skill_description = node_data["description"]
-			
 			$Timer.start()
 			await $Timer.timeout
 			$Timer.stop()
@@ -172,7 +174,7 @@ func load_game(file_path):
 			new_object.parent.append(s2)
 			
 			
-			$"../../../Music".play_sound("res://Resources/Sounds/click3.wav", 1.29, 5)
+			m_player.play_sound("res://Resources/Sounds/click3.wav", 1.29, 5)
 			
 			$Timer.start()
 			await $Timer.timeout
@@ -188,7 +190,7 @@ func load_game(file_path):
 				continue
 			new_object.set(i, node_data[i])
 	
-	$"../Warning".text = "Save has been full loaded " 
+	#$"../Warning".text = "Save has been full loaded " 
 	
 	
 
@@ -196,10 +198,10 @@ func load_game(file_path):
 func clear():
 	
 	var nodes = get_tree().get_nodes_in_group("Persist")
-	$"../../..".selected_star = null
-	$"../../SkillEdit/Title".text = ""
-	$"../../SkillEdit/Desc".text = ""
-	$"../Warning".text = "The Canvas has been cleared " 
+	$"../../../..".selected_star = null
+	$"../../../SkillEdit/Title".text = ""
+	$"../../../SkillEdit/Desc".text = ""
+	#$"../Warning".text = "The Canvas has been cleared " 
 	
 	for i in nodes:
 		i.queue_free()

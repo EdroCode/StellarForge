@@ -1,37 +1,37 @@
-[gd_scene load_steps=9 format=3 uid="uid://bkcib1jk8p7l"]
+[gd_scene load_steps=8 format=3 uid="uid://bkcib1jk8p7l"]
 
-[ext_resource type="Script" path="res://Scripts/estrela.gd" id="1_unjk1"]
-[ext_resource type="Texture2D" uid="uid://cmme3hr2orprv" path="res://Artwork/Placeble/small_star.png" id="2_28lty"]
-[ext_resource type="Texture2D" uid="uid://dhuv0pmsbo0x" path="res://Artwork/Placeble/medium_Star.png" id="3_053dm"]
-[ext_resource type="Texture2D" uid="uid://thhvhjb7gbgu" path="res://Artwork/Placeble/big.png" id="4_tcxap"]
-[ext_resource type="Texture2D" uid="uid://cff8mdxmg4bcd" path="res://Artwork/Placeble/small_arc.png" id="5_r3355"]
+[ext_resource type="Script" path="res://Scripts/ELements/estrela.gd" id="1_4cwc6"]
+[ext_resource type="Texture2D" uid="uid://nyeijkslnwsl" path="res://Artwork/Cifra/Estrela01.png" id="2_vme6l"]
+[ext_resource type="Texture2D" uid="uid://bdooic3l1ddgg" path="res://Artwork/Cifra/Estrela02.png" id="3_rfmma"]
+[ext_resource type="Texture2D" uid="uid://cyga5j1jig7j2" path="res://Artwork/Cifra/Estrela03.png" id="4_d2rf2"]
 [ext_resource type="Texture2D" uid="uid://crqpwyuthywja" path="res://Artwork/Placeble/medium_arc.png" id="6_kavs1"]
 [ext_resource type="Texture2D" uid="uid://ctf2xfebeytkh" path="res://Artwork/Placeble/big_arc.png" id="7_6y0ta"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7683"]
-size = Vector2(10, 10)
+[sub_resource type="CircleShape2D" id="CircleShape2D_f66ol"]
+radius = 7.00793
 
 [node name="Estrela" type="Node2D" groups=["Persist", "Star"]]
 scale = Vector2(3, 3)
-script = ExtResource("1_unjk1")
-small_texture = ExtResource("2_28lty")
-medium_texture = ExtResource("3_053dm")
-big_texture = ExtResource("4_tcxap")
-small_arc = ExtResource("5_r3355")
-medium_arc = ExtResource("6_kavs1")
-big_arc = ExtResource("7_6y0ta")
+script = ExtResource("1_4cwc6")
+small_texture = ExtResource("3_rfmma")
+medium_texture = ExtResource("2_vme6l")
+big_texture = ExtResource("4_d2rf2")
+small_arc = ExtResource("6_kavs1")
+medium_arc = ExtResource("7_6y0ta")
+big_arc = ExtResource("6_kavs1")
 
 [node name="Star" type="Sprite2D" parent="."]
-texture = ExtResource("4_tcxap")
+texture = ExtResource("3_rfmma")
 
 [node name="Arc" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.537255)
-texture = ExtResource("5_r3355")
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_kavs1")
 
 [node name="ClickCheck" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickCheck"]
-shape = SubResource("RectangleShape2D_k7683")
+shape = SubResource("CircleShape2D_f66ol")
 
 [connection signal="mouse_entered" from="ClickCheck" to="." method="_on_click_check_mouse_entered"]
 [connection signal="mouse_exited" from="ClickCheck" to="." method="_on_click_check_mouse_exited"]

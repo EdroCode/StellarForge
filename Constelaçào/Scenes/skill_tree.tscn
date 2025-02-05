@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://bmvtsvhqhm43f"]
+
+[ext_resource type="Texture2D" uid="uid://cmlplsoccwmvi" path="res://Artwork/Placeble/Sprite-000asd3.png" id="1_l8ghr"]
+[ext_resource type="Script" path="res://Scenes/skill_tree.gd" id="1_qhnki"]
+[ext_resource type="Theme" uid="uid://d4klxd0nfjfgl" path="res://Resources/main_base.tres" id="3_0fkoi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j06i8"]
+content_margin_left = 4.0
+bg_color = Color(0.113725, 0.113725, 0.113725, 0.45098)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c1gp7"]
+bg_color = Color(0.113725, 0.113725, 0.113725, 0.25098)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hv36v"]
+radius = 24.0832
+
+[node name="SkillTree" type="Node2D" groups=["Persist", "Tree"]]
+script = ExtResource("1_qhnki")
+
+[node name="Stars" type="Node2D" parent="."]
+
+[node name="Sprite-000Asd3" type="Sprite2D" parent="."]
+texture = ExtResource("1_l8ghr")
+
+[node name="Name" type="LineEdit" parent="."]
+offset_left = 39.0
+offset_top = -24.0
+offset_right = 146.0
+mouse_filter = 1
+theme = ExtResource("3_0fkoi")
+theme_override_styles/normal = SubResource("StyleBoxFlat_j06i8")
+text = "Skill Tree #1"
+
+[node name="Open" type="Button" parent="."]
+offset_left = 39.0
+offset_right = 87.0
+offset_bottom = 24.0
+theme = ExtResource("3_0fkoi")
+theme_override_styles/normal = SubResource("StyleBoxFlat_c1gp7")
+text = "Open"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["TreeBlow"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_hv36v")
+
+[node name="WobbleTimer" type="Timer" parent="."]
+wait_time = 0.4
+
+[connection signal="text_changed" from="Name" to="." method="_on_name_text_changed"]
+[connection signal="button_down" from="Open" to="." method="_on_open_button_down"]

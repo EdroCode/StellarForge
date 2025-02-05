@@ -1,0 +1,294 @@
+[gd_scene load_steps=28 format=3 uid="uid://bli10o4wp5qjv"]
+
+[ext_resource type="Script" path="res://Scenes/tree_viewer.gd" id="1_87oq4"]
+[ext_resource type="Texture2D" uid="uid://b80x21d2c42rl" path="res://Artwork/Cifra/galaxy.png" id="1_f6cli"]
+[ext_resource type="Script" path="res://Scripts/ELements/CameraControl.gd" id="2_k7s6y"]
+[ext_resource type="Script" path="res://Scripts/TreeViewer/Control Menu.gd" id="2_syg0c"]
+[ext_resource type="FontFile" uid="uid://0rtn3xa50dfs" path="res://Artwork/Fonts/Mystery Font(1).ttf" id="3_jss2m"]
+[ext_resource type="Texture2D" uid="uid://bweofvqed0tjm" path="res://Geral/border.png" id="5_ig4er"]
+[ext_resource type="Texture2D" uid="uid://dpc8tfyuhenh0" path="res://Artwork/Cifra/Asset05.png" id="6_v8gsv"]
+[ext_resource type="Texture2D" uid="uid://dc5xte6mg7cqf" path="res://Artwork/Fonts/question.png" id="7_newht"]
+[ext_resource type="Texture2D" uid="uid://7fwl0pr10ata" path="res://Artwork/UI/Tools/Boxed/plus.png" id="8_k6ctc"]
+[ext_resource type="Texture2D" uid="uid://ck8oallacorcq" path="res://Artwork/UI/Tools/Boxed/minus.png" id="9_vgeos"]
+[ext_resource type="Texture2D" uid="uid://coo4vr78or616" path="res://Artwork/UI/Tools/Icons/sound_on.png" id="10_lplbp"]
+[ext_resource type="Texture2D" uid="uid://dhp6w7b5lil5e" path="res://Artwork/UI/Tools/Icons/mute.png" id="11_87nnn"]
+[ext_resource type="Texture2D" uid="uid://b246d28q22r7i" path="res://Artwork/UI/Tools/Icons/music_on.png" id="12_hxlxt"]
+[ext_resource type="Texture2D" uid="uid://dcxm8s0j6nnp5" path="res://Artwork/UI/Tools/Icons/music_off.png" id="13_6ktq0"]
+[ext_resource type="Texture2D" uid="uid://b4jj53n2vbj26" path="res://Artwork/UI/Tools/Icons/temporarymap.png" id="14_m4kg3"]
+[ext_resource type="FontFile" uid="uid://blarstafwt6t6" path="res://Artwork/Fonts/Mystery Font.ttf" id="16_8aju5"]
+[ext_resource type="Texture2D" uid="uid://b13potokwspl0" path="res://Artwork/UI/Tools/Icons/settings.png" id="17_h87u6"]
+[ext_resource type="Script" path="res://Scripts/TreeViewer/SaveTrees.gd" id="18_d40kp"]
+[ext_resource type="Theme" uid="uid://d4klxd0nfjfgl" path="res://Resources/main_base.tres" id="19_jlm8h"]
+
+[sub_resource type="Gradient" id="Gradient_x1nqs"]
+offsets = PackedFloat32Array(0, 0.292208)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_p13q2"]
+gradient = SubResource("Gradient_x1nqs")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hb20y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btom7"]
+content_margin_left = 13.0
+content_margin_top = 13.0
+content_margin_right = 13.0
+content_margin_bottom = 13.0
+bg_color = Color(0.537255, 0.34902, 0.27451, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.301961, 0.196078, 0.152941, 1)
+
+[sub_resource type="Theme" id="Theme_c7xd3"]
+MenuButton/styles/normal = SubResource("StyleBoxFlat_hb20y")
+PopupMenu/fonts/font = ExtResource("16_8aju5")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_btom7")
+
+[sub_resource type="Animation" id="Animation_lg38q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_6toqf"]
+resource_name = "Start"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lvfno"]
+_data = {
+"RESET": SubResource("Animation_lg38q"),
+"Start": SubResource("Animation_6toqf")
+}
+
+[node name="TreeViewer" type="Node2D"]
+script = ExtResource("1_87oq4")
+
+[node name="Sprite2D" type="TextureRect" parent="."]
+offset_left = 2991.0
+offset_top = 1706.0
+offset_right = 11709.0
+offset_bottom = 9849.0
+scale = Vector2(-0.576417, -0.35509)
+mouse_filter = 2
+texture = ExtResource("1_f6cli")
+stretch_mode = 1
+
+[node name="SkillTrees" type="Node2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(480, 270)
+script = ExtResource("2_k7s6y")
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="Border" type="TextureRect" parent="GUI"]
+offset_right = 960.0
+offset_bottom = 540.0
+mouse_filter = 2
+texture = ExtResource("5_ig4er")
+
+[node name="Control Menu" type="Control" parent="GUI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -500.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_syg0c")
+
+[node name="ColorRect" type="TextureRect" parent="GUI/Control Menu"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 960.0
+offset_top = 31.0
+offset_right = 64.0
+offset_bottom = 991.0
+grow_horizontal = 2
+rotation = 1.57079
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_p13q2")
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Control Menu"]
+layout_mode = 0
+offset_right = 960.0
+offset_bottom = 55.0
+mouse_filter = 0
+texture = ExtResource("6_v8gsv")
+
+[node name="Titulo" type="Label" parent="GUI/Control Menu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -110.0
+offset_top = 4.0
+offset_right = 110.0
+offset_bottom = 58.0
+grow_horizontal = 2
+scale = Vector2(0.7, 0.7)
+theme_override_colors/font_color = Color(1, 1, 0.921569, 1)
+theme_override_fonts/font = ExtResource("3_jss2m")
+theme_override_font_sizes/font_size = 32
+text = "Constelacoes"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_direction = 1
+
+[node name="Test" type="RichTextLabel" parent="GUI/Control Menu"]
+visible = false
+layout_mode = 0
+offset_left = 794.0
+offset_top = 46.0
+offset_right = 961.0
+offset_bottom = 468.0
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("3_jss2m")
+theme_override_font_sizes/normal_font_size = 16
+text = "Test"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GUI/Control Menu"]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 8.0
+offset_right = 529.0
+offset_bottom = 28.0
+scale = Vector2(2, 2)
+theme_override_constants/separation = 3
+alignment = 2
+
+[node name="Help" type="TextureButton" parent="GUI/Control Menu/HBoxContainer"]
+visible = false
+layout_mode = 2
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("7_newht")
+
+[node name="Plus" type="TextureButton" parent="GUI/Control Menu/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 2
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = ExtResource("8_k6ctc")
+
+[node name="Minus" type="TextureButton" parent="GUI/Control Menu/HBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 2
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = ExtResource("9_vgeos")
+
+[node name="Sound" type="TextureButton" parent="GUI/Control Menu/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = ExtResource("10_lplbp")
+texture_pressed = ExtResource("11_87nnn")
+
+[node name="Music" type="TextureButton" parent="GUI/Control Menu/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = ExtResource("12_hxlxt")
+texture_pressed = ExtResource("13_6ktq0")
+
+[node name="SkillOpen" type="TextureButton" parent="GUI/Control Menu/HBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = ExtResource("14_m4kg3")
+
+[node name="FileButton" type="MenuButton" parent="GUI/Control Menu/HBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_c7xd3")
+theme_override_colors/font_color = Color(1, 1, 0.921569, 1)
+theme_override_fonts/font = ExtResource("3_jss2m")
+icon = ExtResource("17_h87u6")
+icon_alignment = 1
+item_count = 4
+popup/item_0/text = "Clear"
+popup/item_0/id = 2
+popup/item_1/text = "Save"
+popup/item_1/id = 1
+popup/item_2/text = "Save as"
+popup/item_2/id = 3
+popup/item_3/text = "Load"
+popup/item_3/id = 0
+script = ExtResource("18_d40kp")
+
+[node name="Timer" type="Timer" parent="GUI/Control Menu/HBoxContainer/FileButton"]
+wait_time = 5.0
+
+[node name="Vignete" type="ColorRect" parent="GUI"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GUI/Vignete"]
+libraries = {
+"": SubResource("AnimationLibrary_lvfno")
+}
+
+[node name="AddSkillTree" type="Button" parent="GUI"]
+offset_left = 845.0
+offset_top = 456.0
+offset_right = 945.0
+offset_bottom = 525.0
+text = "+"
+
+[node name="SaveDialog" type="FileDialog" parent="."]
+title = ""
+initial_position = 1
+size = Vector2i(512, 330)
+min_size = Vector2i(200, 71)
+theme = ExtResource("19_jlm8h")
+ok_button_text = "Save"
+access = 2
+root_subfolder = "saves/trees"
+
+[node name="LoadDialog" type="FileDialog" parent="."]
+title = "Open a File"
+initial_position = 1
+size = Vector2i(622, 330)
+min_size = Vector2i(200, 71)
+theme = ExtResource("19_jlm8h")
+ok_button_text = "Open"
+file_mode = 0
+access = 2
+root_subfolder = "saves/trees"
+
+[connection signal="button_down" from="GUI/Control Menu/HBoxContainer/SkillOpen" to="GUI/Control Menu" method="_on_skill_open_button_down"]
+[connection signal="button_down" from="GUI/AddSkillTree" to="GUI/Control Menu" method="_on_add_skill_tree_button_down"]
+[connection signal="file_selected" from="SaveDialog" to="GUI/Control Menu/HBoxContainer/FileButton" method="_on_save_dialog_file_selected"]

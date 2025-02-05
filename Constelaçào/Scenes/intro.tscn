@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://d4hcl4lb5qmv3"]
 
 [ext_resource type="Shader" path="res://wobbly.gdshader" id="1_6me3k"]
-[ext_resource type="Texture2D" uid="uid://33h4cjfweiwn" path="res://Artwork/UI/Geral/back.png" id="1_kj7mg"]
+[ext_resource type="Texture2D" uid="uid://33h4cjfweiwn" path="res://Geral/back.png" id="1_kj7mg"]
 [ext_resource type="Script" path="res://Scripts/intro.gd" id="1_yg1tq"]
 [ext_resource type="Texture2D" uid="uid://bolcldvqr5nqv" path="res://Artwork/UI/TextELEMENTS/T1.png" id="2_hh5po"]
 [ext_resource type="Texture2D" uid="uid://cbw1wkqmrafod" path="res://Artwork/UI/TextELEMENTS/52.png" id="3_2njip"]

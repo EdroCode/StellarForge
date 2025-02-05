@@ -14,7 +14,11 @@ config/name="Constelaçòes"
 run/main_scene="res://Scenes/intro.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 boot_splash/bg_color=Color(0.376471, 0.376471, 0.439216, 1)
-config/icon="res://Artwork/UI/Geral/icon-sheet.png"
+config/icon="res://Geral/icon-sheet.png"
+
+[autoload]
+
+GameManager="*res://Scripts/GameManager.gd"
 
 [display]
 
